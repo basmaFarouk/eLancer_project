@@ -18,6 +18,8 @@
   <div class="mb-3">
 
     <x-form.select id="parent_id" name="parent_id" label="Parent" :options="$data->pluck('name','id')" :selected="$category->parent_id" />
+      
+
 
     {{-- <label for="parent_id" class="form-label">Parent </label>
     <select class="form-control  @error('parent_id') is-invalid @enderror" name="parent_id" id="parent_id">
@@ -32,11 +34,12 @@
     @enderror --}}
   </div>
   <div class="mb-3">
-    <label for="image" class="form-label">image </label>
+    {{-- <label for="image" class="form-label">image </label>
     <input type="file" class="form-control  @error('image') is-invalid @enderror" name="image" id="image">
     @error('image')
     <p class="text-danger">{{$message}}</p>
-    @enderror
+    @enderror --}}
+    <x-form.input label="Image" type="file" name="image" id="image" />
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>

@@ -90,8 +90,8 @@ return [
         'users' => [
             'provider' => 'users',
             'table' => 'password_resets',
-            'expire' => 60,
-            'throttle' => 60,
+            'expire' => 60, //minutes for link reset password expire
+            'throttle' => 60, //seconds for trying في الدقيقة الواحدة معايا اني اطلب اللينك مرة واحدة
         ],
     ],
 
@@ -106,6 +106,7 @@ return [
     |
     */
 
-    'password_timeout' => 10800,
+    'password_timeout' => 10800, //seconds for password confirmation >>لما يعدو هيطلب منه يدخل الباسوورد تاني وهما 3 ساعات
+    
 
 ];

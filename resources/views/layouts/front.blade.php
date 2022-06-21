@@ -1,244 +1,573 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>{{config('app.name')}} || {{$title}}</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+<!-- Basic Page Needs
+================================================== -->
+<title>Hireo</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
+<!-- CSS
+================================================== -->
+<link rel="stylesheet" href="{{asset('assets/front/css/style.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/colors/blue.css')}}">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="{{asset('assets/front/lib/animate/animate.min.css" rel="stylesheet')}}">
-    <link href="{{asset('assets/front/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/front/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{asset('assets/front/css/bootstrap.min.css')}}" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="{{asset('assets/front/css/style.css')}}" rel="stylesheet">
 </head>
-
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header Container
+================================================== -->
+<header id="header-container" class="fullwidth">
+
+	<!-- Header -->
+	<div id="header">
+		<div class="container">
+
+			<!-- Left Side Content -->
+			<div class="left-side">
+
+				<!-- Logo -->
+				<div id="logo">
+					<a href="index.html"><img src="images/logo.png" alt=""></a>
+				</div>
+
+				<!-- Main Navigation -->
+				<nav id="navigation">
+					<ul id="responsive">
+
+						<li><a href="#" class="current">Home</a>
+							<ul class="dropdown-nav">
+								<li><a href="index.html">Home 1</a></li>
+								<li><a href="index-2.html">Home 2</a></li>
+								<li><a href="index-3.html">Home 3</a></li>
+							</ul>
+						</li>
+
+						<li><a href="#">Find Work</a>
+							<ul class="dropdown-nav">
+								<li><a href="#">Browse Jobs</a>
+									<ul class="dropdown-nav">
+										<li><a href="jobs-list-layout-full-page-map.html">Full Page List + Map</a></li>
+										<li><a href="jobs-grid-layout-full-page-map.html">Full Page Grid + Map</a></li>
+										<li><a href="jobs-grid-layout-full-page.html">Full Page Grid</a></li>
+										<li><a href="jobs-list-layout-1.html">List Layout 1</a></li>
+										<li><a href="jobs-list-layout-2.html">List Layout 2</a></li>
+										<li><a href="jobs-grid-layout.html">Grid Layout</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Browse Tasks</a>
+									<ul class="dropdown-nav">
+										<li><a href="tasks-list-layout-1.html">List Layout 1</a></li>
+										<li><a href="tasks-list-layout-2.html">List Layout 2</a></li>
+										<li><a href="tasks-grid-layout.html">Grid Layout</a></li>
+										<li><a href="tasks-grid-layout-full-page.html">Full Page Grid</a></li>
+									</ul>
+								</li>
+								<li><a href="browse-companies.html">Browse Companies</a></li>
+								<li><a href="single-job-page.html">Job Page</a></li>
+								<li><a href="single-task-page.html">Task Page</a></li>
+								<li><a href="single-company-profile.html">Company Profile</a></li>
+							</ul>
+						</li>
+
+						<li><a href="#">For Employers</a>
+							<ul class="dropdown-nav">
+								<li><a href="#">Find a Freelancer</a>
+									<ul class="dropdown-nav">
+										<li><a href="freelancers-grid-layout-full-page.html">Full Page Grid</a></li>
+										<li><a href="freelancers-grid-layout.html">Grid Layout</a></li>
+										<li><a href="freelancers-list-layout-1.html">List Layout 1</a></li>
+										<li><a href="freelancers-list-layout-2.html">List Layout 2</a></li>
+									</ul>
+								</li>
+								<li><a href="single-freelancer-profile.html">Freelancer Profile</a></li>
+								<li><a href="dashboard-post-a-job.html">Post a Job</a></li>
+								<li><a href="dashboard-post-a-task.html">Post a Task</a></li>
+							</ul>
+						</li>
+
+						<li><a href="#">Dashboard</a>
+							<ul class="dropdown-nav">
+								<li><a href="dashboard.html">Dashboard</a></li>
+								<li><a href="dashboard-messages.html">Messages</a></li>
+								<li><a href="dashboard-bookmarks.html">Bookmarks</a></li>
+								<li><a href="dashboard-reviews.html">Reviews</a></li>
+								<li><a href="dashboard-manage-jobs.html">Jobs</a>
+									<ul class="dropdown-nav">
+										<li><a href="dashboard-manage-jobs.html">Manage Jobs</a></li>
+										<li><a href="dashboard-manage-candidates.html">Manage Candidates</a></li>
+										<li><a href="dashboard-post-a-job.html">Post a Job</a></li>
+									</ul>
+								</li>
+								<li><a href="dashboard-manage-tasks.html">Tasks</a>
+									<ul class="dropdown-nav">
+										<li><a href="dashboard-manage-tasks.html">Manage Tasks</a></li>
+										<li><a href="dashboard-manage-bidders.html">Manage Bidders</a></li>
+										<li><a href="dashboard-my-active-bids.html">My Active Bids</a></li>
+										<li><a href="dashboard-post-a-task.html">Post a Task</a></li>
+									</ul>
+								</li>
+								<li><a href="dashboard-settings.html">Settings</a></li>
+							</ul>
+						</li>
+
+						<li><a href="#">Pages</a>
+							<ul class="dropdown-nav">
+								<li><a href="pages-blog.html">Blog</a></li>
+								<li><a href="pages-pricing-plans.html">Pricing Plans</a></li>
+								<li><a href="pages-checkout-page.html">Checkout Page</a></li>
+								<li><a href="pages-invoice-template.html">Invoice Template</a></li>
+								<li><a href="pages-user-interface-elements.html">User Interface Elements</a></li>
+								<li><a href="pages-icons-cheatsheet.html">Icons Cheatsheet</a></li>
+								<li><a href="pages-login.html">Login & Register</a></li>
+								<li><a href="pages-404.html">404 Page</a></li>
+								<li><a href="pages-contact.html">Contact</a></li>
+							</ul>
+						</li>
+
+					</ul>
+				</nav>
+				<div class="clearfix"></div>
+				<!-- Main Navigation / End -->
+
+			</div>
+			<!-- Left Side Content / End -->
 
 
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-light p-0">
-        <div class="row gx-0 d-none d-lg-flex">
-            <div class="col-lg-7 px-5 text-start">
-                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                    <small>123 Street, New York, USA</small>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center py-3">
-                    <small class="far fa-clock text-primary me-2"></small>
-                    <small>Mon - Fri : 09.00 AM - 09.00 PM</small>
-                </div>
-            </div>
-            <div class="col-lg-5 px-5 text-end">
-                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-                    <small class="fa fa-phone-alt text-primary me-2"></small>
-                    <small>+012 345 6789</small>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
+			<!-- Right Side Content / End -->
+			<div class="right-side">
+
+				<!--  User Notifications -->
+				<div class="header-widget hide-on-mobile">
+
+					<!-- Notifications -->
+					<div class="header-notifications">
+
+						<!-- Trigger -->
+						<div class="header-notifications-trigger">
+							<a href="#"><i class="icon-feather-bell"></i><span>4</span></a>
+						</div>
+
+						<!-- Dropdown -->
+						<div class="header-notifications-dropdown">
+
+							<div class="header-notifications-headline">
+								<h4>Notifications</h4>
+								<button class="mark-as-read ripple-effect-dark" title="Mark all as read" data-tippy-placement="left">
+									<i class="icon-feather-check-square"></i>
+								</button>
+							</div>
+
+							<div class="header-notifications-content">
+								<div class="header-notifications-scroll" data-simplebar>
+									<ul>
+										<!-- Notification -->
+										<li class="notifications-not-read">
+											<a href="dashboard-manage-candidates.html">
+												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
+												<span class="notification-text">
+													<strong>Michael Shannah</strong> applied for a job <span class="color">Full Stack Software Engineer</span>
+												</span>
+											</a>
+										</li>
+
+										<!-- Notification -->
+										<li>
+											<a href="dashboard-manage-bidders.html">
+												<span class="notification-icon"><i class=" icon-material-outline-gavel"></i></span>
+												<span class="notification-text">
+													<strong>Gilbert Allanis</strong> placed a bid on your <span class="color">iOS App Development</span> project
+												</span>
+											</a>
+										</li>
+
+										<!-- Notification -->
+										<li>
+											<a href="dashboard-manage-jobs.html">
+												<span class="notification-icon"><i class="icon-material-outline-autorenew"></i></span>
+												<span class="notification-text">
+													Your job listing <span class="color">Full Stack PHP Developer</span> is expiring.
+												</span>
+											</a>
+										</li>
+
+										<!-- Notification -->
+										<li>
+											<a href="dashboard-manage-candidates.html">
+												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
+												<span class="notification-text">
+													<strong>Sindy Forrest</strong> applied for a job <span class="color">Full Stack Software Engineer</span>
+												</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<!-- Messages -->
+					<div class="header-notifications">
+						<div class="header-notifications-trigger">
+							<a href="#"><i class="icon-feather-mail"></i><span>3</span></a>
+						</div>
+
+						<!-- Dropdown -->
+						<div class="header-notifications-dropdown">
+
+							<div class="header-notifications-headline">
+								<h4>Messages</h4>
+								<button class="mark-as-read ripple-effect-dark" title="Mark all as read" data-tippy-placement="left">
+									<i class="icon-feather-check-square"></i>
+								</button>
+							</div>
+
+							<div class="header-notifications-content">
+								<div class="header-notifications-scroll" data-simplebar>
+									<ul>
+										<!-- Notification -->
+										<li class="notifications-not-read">
+											<a href="dashboard-messages.html">
+												<span class="notification-avatar status-online"><img src="images/user-avatar-small-03.jpg" alt=""></span>
+												<div class="notification-text">
+													<strong>David Peterson</strong>
+													<p class="notification-msg-text">Thanks for reaching out. I'm quite busy right now on many...</p>
+													<span class="color">4 hours ago</span>
+												</div>
+											</a>
+										</li>
+
+										<!-- Notification -->
+										<li class="notifications-not-read">
+											<a href="dashboard-messages.html">
+												<span class="notification-avatar status-offline"><img src="images/user-avatar-small-02.jpg" alt=""></span>
+												<div class="notification-text">
+													<strong>Sindy Forest</strong>
+													<p class="notification-msg-text">Hi Tom! Hate to break it to you, but I'm actually on vacation until...</p>
+													<span class="color">Yesterday</span>
+												</div>
+											</a>
+										</li>
+
+										<!-- Notification -->
+										<li class="notifications-not-read">
+											<a href="dashboard-messages.html">
+												<span class="notification-avatar status-online"><img src="images/user-avatar-placeholder.png" alt=""></span>
+												<div class="notification-text">
+													<strong>Marcin Kowalski</strong>
+													<p class="notification-msg-text">I received payment. Thanks for cooperation!</p>
+													<span class="color">Yesterday</span>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<a href="dashboard-messages.html" class="header-notifications-button ripple-effect button-sliding-icon">View All Messages<i class="icon-material-outline-arrow-right-alt"></i></a>
+						</div>
+					</div>
+
+				</div>
+				<!--  User Notifications / End -->
+                @auth
 
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary">{{config('app.name')}}</h2>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
-                <a href="project.html" class="nav-item nav-link">Project</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu fade-up m-0">
-                        <a href="feature.html" class="dropdown-item">Feature</a>
-                        <a href="quote.html" class="dropdown-item">Free Quote</a>
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-            </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
-    </nav>
-    <!-- Navbar End -->
+				<!-- User Menu -->
+				<div class="header-widget">
+
+					<!-- Messages -->
+					<div class="header-notifications user-menu">
+						<div class="header-notifications-trigger">
+							<a href="#"><div class="user-avatar status-online"><img src="images/user-avatar-small-01.jpg" alt=""></div></a>
+						</div>
+
+						<!-- Dropdown -->
+						<div class="header-notifications-dropdown">
+
+							<!-- User Status -->
+							<div class="user-status">
+
+								<!-- User Name / Avatar -->
+								<div class="user-details">
+									<div class="user-avatar status-online"><img src="images/user-avatar-small-01.jpg" alt=""></div>
+									<div class="user-name">
+										{{Auth::user()->name}} <span>Freelancer</span>
+									</div>
+								</div>
+
+								<!-- User Status Switcher -->
+								<div class="status-switch" id="snackbar-user-status">
+									<label class="user-online current-status">Online</label>
+									<label class="user-invisible">Invisible</label>
+									<!-- Status Indicator -->
+									<span class="status-indicator" aria-hidden="true"></span>
+								</div>
+						</div>
+
+						<ul class="user-menu-small-nav">
+							<li><a href="dashboard.html"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
+							<li><a href="dashboard-settings.html"><i class="icon-material-outline-settings"></i> Settings</a></li>
+                            <form action="{{route('logout')}}" method="POST">
+                                @csrf
+                                <li><button type="submit"><i class="icon-material-outline-power-settings-new"></i> Logout</button></li>
+                            </form>
+						</ul>
+
+						</div>
+					</div>
+
+				</div>
+                @endauth
+				<!-- User Menu / End -->
+
+				<!-- Mobile Navigation Button -->
+				<span class="mmenu-trigger">
+					<button class="hamburger hamburger--collapse" type="button">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+					</button>
+				</span>
+
+			</div>
+			<!-- Right Side Content / End -->
+
+		</div>
+	</div>
+	<!-- Header / End -->
+
+</header>
+<div class="clearfix"></div>
+<!-- Header Container / End -->
 
 
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0 pb-5">
-        <div class="owl-carousel header-carousel position-relative">
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="{{asset('assets/front/img/carousel-1.jpg')}}" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-lg-8 text-center">
-                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To WooDY</h5>
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Best Carpenter & Craftsman Services</h1>
-                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Free Quote</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="{{asset('assets/front/img/carousel-2.jpg')}}" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-lg-8 text-center">
-                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To WooDY</h5>
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Best Carpenter & Craftsman Services</h1>
-                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Free Quote</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="{{asset('assets/front/img/carousel-3.jpg')}}" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-lg-8 text-center">
-                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To WooDY</h5>
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Best Carpenter & Craftsman Services</h1>
-                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Free Quote</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Carousel End -->
+{{$slot}}
+
+<!-- Footer
+================================================== -->
+<div id="footer">
+
+	<!-- Footer Top Section -->
+	<div class="footer-top-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+
+					<!-- Footer Rows Container -->
+					<div class="footer-rows-container">
+
+						<!-- Left Side -->
+						<div class="footer-rows-left">
+							<div class="footer-row">
+								<div class="footer-row-inner footer-logo">
+									<img src="images/logo2.png" alt="">
+								</div>
+							</div>
+						</div>
+
+						<!-- Right Side -->
+						<div class="footer-rows-right">
+
+							<!-- Social Icons -->
+							<div class="footer-row">
+								<div class="footer-row-inner">
+									<ul class="footer-social-links">
+										<li>
+											<a href="#" title="Facebook" data-tippy-placement="bottom" data-tippy-theme="light">
+												<i class="icon-brand-facebook-f"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#" title="Twitter" data-tippy-placement="bottom" data-tippy-theme="light">
+												<i class="icon-brand-twitter"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#" title="Google Plus" data-tippy-placement="bottom" data-tippy-theme="light">
+												<i class="icon-brand-google-plus-g"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#" title="LinkedIn" data-tippy-placement="bottom" data-tippy-theme="light">
+												<i class="icon-brand-linkedin-in"></i>
+											</a>
+										</li>
+									</ul>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+
+							<!-- Language Switcher -->
+							<div class="footer-row">
+								<div class="footer-row-inner">
+									<select class="selectpicker language-switcher" data-selected-text-format="count" data-size="5">
+										<option selected>English</option>
+										<option>Français</option>
+										<option>Español</option>
+										<option>Deutsch</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- Footer Rows Container / End -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer Top Section / End -->
+
+	<!-- Footer Middle Section -->
+	<div class="footer-middle-section">
+		<div class="container">
+			<div class="row">
+
+				<!-- Links -->
+				<div class="col-xl-2 col-lg-2 col-md-3">
+					<div class="footer-links">
+						<h3>For Candidates</h3>
+						<ul>
+							<li><a href="#"><span>Browse Jobs</span></a></li>
+							<li><a href="#"><span>Add Resume</span></a></li>
+							<li><a href="#"><span>Job Alerts</span></a></li>
+							<li><a href="#"><span>My Bookmarks</span></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Links -->
+				<div class="col-xl-2 col-lg-2 col-md-3">
+					<div class="footer-links">
+						<h3>For Employers</h3>
+						<ul>
+							<li><a href="#"><span>Browse Candidates</span></a></li>
+							<li><a href="#"><span>Post a Job</span></a></li>
+							<li><a href="#"><span>Post a Task</span></a></li>
+							<li><a href="#"><span>Plans & Pricing</span></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Links -->
+				<div class="col-xl-2 col-lg-2 col-md-3">
+					<div class="footer-links">
+						<h3>Helpful Links</h3>
+						<ul>
+							<li><a href="#"><span>Contact</span></a></li>
+							<li><a href="#"><span>Privacy Policy</span></a></li>
+							<li><a href="#"><span>Terms of Use</span></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Links -->
+				<div class="col-xl-2 col-lg-2 col-md-3">
+					<div class="footer-links">
+						<h3>Account</h3>
+						<ul>
+							<li><a href="#"><span>Log In</span></a></li>
+							<li><a href="#"><span>My Account</span></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Newsletter -->
+				<div class="col-xl-4 col-lg-4 col-md-12">
+					<h3><i class="icon-feather-mail"></i> Sign Up For a Newsletter</h3>
+					<p>Weekly breaking news, analysis and cutting edge advices on job searching.</p>
+					<form action="#" method="get" class="newsletter">
+						<input type="text" name="fname" placeholder="Enter your email address">
+						<button type="submit"><i class="icon-feather-arrow-right"></i></button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer Middle Section / End -->
+
+	<!-- Footer Copyrights -->
+	<div class="footer-bottom-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					© 2018 <strong>Hireo</strong>. All Rights Reserved.
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer Copyrights / End -->
+
+</div>
+<!-- Footer / End -->
+
+</div>
+<!-- Wrapper / End -->
 
 
-        {{$slot}}
+<!-- Scripts
+================================================== -->
+<script src="{{asset('assets/front/js/jquery-3.3.1.min.js')}}"></script>
+<script src="{{asset('assets/front/js/jquery-migrate-3.0.0.min.js')}}"></script>
+<script src="{{asset('assets/front/js/mmenu.min.js')}}"></script>
+<script src="{{asset('assets/front/js/tippy.all.min.js')}}"></script>
+<script src="{{asset('assets/front/js/simplebar.min.js')}}"></script>
+<script src="{{asset('assets/front/js/bootstrap-slider.min.js')}}"></script>
+<script src="{{asset('assets/front/js/bootstrap-select.min.js')}}"></script>
+<script src="{{asset('assets/front/js/snackbar.js')}}"></script>
+<script src="{{asset('assets/front/js/clipboard.min.js')}}"></script>
+<script src="{{asset('assets/front/js/counterup.min.js')}}"></script>
+<script src="{{asset('assets/front/js/magnific-popup.min.js')}}"></script>
+<script src="{{asset('assets/front/js/slick.min.js')}}"></script>
+<script src="{{asset('assets/front/js/custom.js')}}"></script>
+
+<!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
+<script>
+// Snackbar for user status switcher
+$('#snackbar-user-status label').click(function() {
+	Snackbar.show({
+		text: 'Your status has been changed!',
+		pos: 'bottom-center',
+		showAction: false,
+		actionText: "Dismiss",
+		duration: 3000,
+		textColor: '#fff',
+		backgroundColor: '#383838'
+	});
+});
+</script>
 
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Address</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Services</h4>
-                    <a class="btn btn-link" href="">General Carpentry</a>
-                    <a class="btn btn-link" href="">Furniture Remodeling</a>
-                    <a class="btn btn-link" href="">Wooden Floor</a>
-                    <a class="btn btn-link" href="">Wooden Furniture</a>
-                    <a class="btn btn-link" href="">Custom Carpentry</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
+<!-- Google Autocomplete -->
+<script>
+	function initAutocomplete() {
+		 var options = {
+		  types: ['(cities)'],
+		  // componentRestrictions: {country: "us"}
+		 };
 
+		 var input = document.getElementById('autocomplete-input');
+		 var autocomplete = new google.maps.places.Autocomplete(input, options);
+	}
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+	// Autocomplete adjustment for homepage
+	if ($('.intro-banner-search-form')[0]) {
+	    setTimeout(function(){
+	        $(".pac-container").prependTo(".intro-search-field.with-autocomplete");
+	    }, 300);
+	}
 
+</script>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{asset('assets/front/lib/wow/wow.min.js')}}"></script>
-    <script src="{{asset('assets/front/lib/easing/easing.min.js')}}"></script>
-    <script src="{{asset('assets/front/lib/waypoints/waypoints.min.js')}}"></script>
-    <script src="{{asset('assets/front/lib/counterup/counterup.min.js')}}"></script>
-    <script src="{{asset('assets/front/lib/owlcarousel/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('assets/front/lib/isotope/isotope.pkgd.min.js')}}"></script>
-    <script src="{{asset('assets/front/lib/lightbox/js/lightbox.min.js')}}"></script>
+<!-- Google API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g&libraries=places&callback=initAutocomplete"></script>
 
-    <!-- Template Javascript -->
-    <script src="{{asset('assets/front/js/main.js')}}"></script>
 </body>
-
 </html>

@@ -9,7 +9,7 @@ Route::get('/', function () {
 Route::group([
     'prefix'=>'/dashboard', //prefix for URI
     'as'=>'', //prefix for route name
-    'middleware'=>['auth'],
+    'middleware'=>['auth'],//,'verified'],
 ],function(){
     Route::get('/categories', [CategoriesController::class, 'index'])->name('categories.index')->middleware('auth');
     Route::get('/categories/create', [CategoriesController::class, 'create'])->name('categories.create');
@@ -18,6 +18,9 @@ Route::group([
     Route::post('/categories', [CategoriesController::class, 'store'])->name('categories.store');
     Route::put('/categories/{id}', [CategoriesController::class, 'update'])->name('categories.update');
     Route::delete('/categories/{id}', [CategoriesController::class, 'destroy'])->name('categories.destroy');
+    Route::get('profile',function(){
+        return "secret profile";
+    })->middleware('password.confirm');
 });
 
 // Route::get('/categories',[CategoriesController::class,'index'])->name('categories.index');

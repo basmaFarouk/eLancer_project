@@ -99,6 +99,7 @@ class CategoriesController extends Controller
     {
         //
         $category=DB::table('categories')->where('id',$id)->first();
+        // dd($category);
         if($category==null){
             abort(404);
         }
@@ -140,6 +141,7 @@ class CategoriesController extends Controller
         // $category->save();
         // session()->flash('message','raw inserted');
         // dd($clean);
+        $clean['slug']=Str::slug($request->name) ;
         Category::where('id',$id)->update($clean);
        return redirect()->route('categories.index')->with('message','raw updated');
     }

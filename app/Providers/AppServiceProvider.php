@@ -38,7 +38,7 @@ class AppServiceProvider extends ServiceProvider
             return true;
         },'This Word is Invalid');
 
-        Paginator::useBootstrap();
+        Paginator::useBootstrap(); //use bootstrap instead of tailwind
         // Paginator::defaultView('vendor.pagination.tailwind'); //لو عاملة ملف خاص بيا فهديله الباث بتاعه
     }
 }

@@ -1,8 +1,11 @@
 @props([
-    'id','label','name','selected'=>'','options'=>[]
+    'id'=>'','label','name','selected'=>'','options'=>[]
 ])
 
+@if (isset($label))
 <label for="{{$id}}" class="form-label">{{$label}} </label>
+@endif
+
 <select
     class="form-control  @error($name) is-invalid @enderror"
     name="{{$name}}"

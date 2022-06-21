@@ -1,528 +1,597 @@
 <x-front-layout title="Home Page">
     {{-- حطيت الكونتنت جوا الكومبوننت >>> content inside component --}}
 
-       <!-- Feature Start -->
-       <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center justify-content-between mb-2">
-                        <div class="d-flex align-items-center justify-content-center bg-light" style="width: 60px; height: 60px;">
-                            <i class="fa fa-user-check fa-2x text-primary"></i>
-                        </div>
-                        <h1 class="display-1 text-light mb-0">01</h1>
-                    </div>
-                    <h5>Creative Designers</h5>
-                </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
-                    <div class="d-flex align-items-center justify-content-between mb-2">
-                        <div class="d-flex align-items-center justify-content-center bg-light" style="width: 60px; height: 60px;">
-                            <i class="fa fa-check fa-2x text-primary"></i>
-                        </div>
-                        <h1 class="display-1 text-light mb-0">02</h1>
-                    </div>
-                    <h5>Quality Products</h5>
-                </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="d-flex align-items-center justify-content-between mb-2">
-                        <div class="d-flex align-items-center justify-content-center bg-light" style="width: 60px; height: 60px;">
-                            <i class="fa fa-drafting-compass fa-2x text-primary"></i>
-                        </div>
-                        <h1 class="display-1 text-light mb-0">03</h1>
-                    </div>
-                    <h5>Free Consultation</h5>
-                </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-                    <div class="d-flex align-items-center justify-content-between mb-2">
-                        <div class="d-flex align-items-center justify-content-center bg-light" style="width: 60px; height: 60px;">
-                            <i class="fa fa-headphones fa-2x text-primary"></i>
-                        </div>
-                        <h1 class="display-1 text-light mb-0">04</h1>
-                    </div>
-                    <h5>Customer Support</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Feature Start -->
+      <!-- Intro Banner
+================================================== -->
+<div class="intro-banner dark-overlay" data-background-image="images/home-background-02.jpg">
+
+	<!-- Transparent Header Spacer -->
+	<div class="transparent-header-spacer"></div>
+
+	<div class="container">
+
+		<!-- Intro Headline -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="banner-headline">
+					<h3>
+						<strong>Hire experts freelancers for any job, any time.</strong>
+						<br>
+						<span>Huge community of designers, developers and creatives ready for your project.</span>
+					</h3>
+				</div>
+			</div>
+		</div>
+
+		<!-- Search Bar -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="intro-banner-search-form margin-top-95">
+
+					<!-- Search Field -->
+					<div class="intro-search-field with-autocomplete">
+						<label for="autocomplete-input" class="field-title ripple-effect">Where?</label>
+						<div class="input-with-icon">
+							<input id="autocomplete-input" type="text" placeholder="Online Job">
+							<i class="icon-material-outline-location-on"></i>
+						</div>
+					</div>
+
+					<!-- Search Field -->
+					<div class="intro-search-field">
+						<label for ="intro-keywords" class="field-title ripple-effect">What you need done?</label>
+						<input id="intro-keywords" type="text" placeholder="e.g. build me a website">
+					</div>
+
+					<!-- Search Field -->
+					<div class="intro-search-field">
+						<select class="selectpicker default" multiple data-selected-text-format="count" data-size="7" title="All Categories" >
+							<option>Admin Support</option>
+							<option>Customer Service</option>
+							<option>Data Analytics</option>
+							<option>Design & Creative</option>
+							<option>Legal</option>
+							<option>Software Developing</option>
+							<option>IT & Networking</option>
+							<option>Writing</option>
+							<option>Translation</option>
+							<option>Sales & Marketing</option>
+						</select>
+					</div>
+
+					<!-- Button -->
+					<div class="intro-search-button">
+						<button class="button ripple-effect" onclick="window.location.href='freelancers-grid-layout-full-page.html'">Search</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Stats -->
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="intro-stats margin-top-45 hide-under-992px">
+					<li>
+						<strong class="counter">1,586</strong>
+						<span>Jobs Posted</span>
+					</li>
+					<li>
+						<strong class="counter">3,543</strong>
+						<span>Tasks Posted</span>
+					</li>
+					<li>
+						<strong class="counter">1,232</strong>
+						<span>Freelancers</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+<!-- Content
+================================================== -->
+
+<!-- Popular Job Categories -->
+<div class="section margin-top-65 margin-bottom-30">
+	<div class="container">
+		<div class="row">
+
+			<!-- Section Headline -->
+			<div class="col-xl-12">
+				<div class="section-headline centered margin-top-0 margin-bottom-45">
+					<h3>Popular Categories</h3>
+				</div>
+			</div>
+
+			<div class="col-xl-3 col-md-6">
+				<!-- Photo Box -->
+				<a href="jobs-list-layout-1.html" class="photo-box small" data-background-image="images/job-category-01.jpg">
+					<div class="photo-box-content">
+						<h3>Web / Software Dev</h3>
+						<span>612</span>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-xl-3 col-md-6">
+				<!-- Photo Box -->
+				<a href="jobs-list-layout-full-page-map.html" class="photo-box small" data-background-image="images/job-category-02.jpg">
+					<div class="photo-box-content">
+						<h3>Data Science / Analitycs</h3>
+						<span>113</span>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-xl-3 col-md-6">
+				<!-- Photo Box -->
+				<a href="jobs-grid-layout-full-page.html" class="photo-box small" data-background-image="images/job-category-03.jpg">
+					<div class="photo-box-content">
+						<h3>Accounting / Consulting</h3>
+						<span>186</span>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-xl-3 col-md-6">
+				<!-- Photo Box -->
+				<a href="jobs-list-layout-2.html" class="photo-box small" data-background-image="images/job-category-04.jpg">
+					<div class="photo-box-content">
+						<h3>Writing & Translations</h3>
+						<span>298</span>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-xl-3 col-md-6">
+				<!-- Photo Box -->
+				<a href="jobs-list-layout-1.html" class="photo-box small" data-background-image="images/job-category-05.jpg">
+					<div class="photo-box-content">
+						<h3>Sales & Marketing</h3>
+						<span>549</span>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-xl-3 col-md-6">
+				<!-- Photo Box -->
+				<a href="jobs-list-layout-full-page-map.html" class="photo-box small" data-background-image="images/job-category-06.jpg">
+					<div class="photo-box-content">
+						<h3>Graphics & Design</h3>
+						<span>873</span>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-xl-3 col-md-6">
+				<!-- Photo Box -->
+				<a href="jobs-grid-layout-full-page.html" class="photo-box small" data-background-image="images/job-category-07.jpg">
+					<div class="photo-box-content">
+						<h3>Digital Marketing</h3>
+						<span>125</span>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-xl-3 col-md-6">
+				<!-- Photo Box -->
+				<a href="jobs-list-layout-2.html" class="photo-box small" data-background-image="images/job-category-08.jpg">
+					<div class="photo-box-content">
+						<h3>Education & Training</h3>
+						<span>445</span>
+					</div>
+				</a>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- Features Cities / End -->
 
 
 
-    <!-- About Start -->
-    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
-        <div class="container about px-lg-0">
-            <div class="row g-0 mx-lg-0">
-                <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/about.jpg" style="object-fit: cover;" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="p-lg-5 pe-lg-0">
-                        <div class="section-title text-start">
-                            <h1 class="display-5 mb-4">About Us</h1>
-                        </div>
-                        <p class="mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
-                        <div class="row g-4 mb-4 pb-2">
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                                        <i class="fa fa-users fa-2x text-primary"></i>
-                                    </div>
-                                    <div class="ms-3">
-                                        <h2 class="text-primary mb-1" data-toggle="counter-up">1234</h2>
-                                        <p class="fw-medium mb-0">Happy Clients</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                                        <i class="fa fa-check fa-2x text-primary"></i>
-                                    </div>
-                                    <div class="ms-3">
-                                        <h2 class="text-primary mb-1" data-toggle="counter-up">1234</h2>
-                                        <p class="fw-medium mb-0">Projects Done</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="" class="btn btn-primary py-3 px-5">Explore More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
+<!-- Features Jobs -->
+<div class="section gray margin-top-45 padding-top-65 padding-bottom-75">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-12">
+
+				<!-- Section Headline -->
+				<div class="section-headline margin-top-0 margin-bottom-35">
+					<h3>Recent Tasks</h3>
+					<a href="tasks-list-layout-1.html" class="headline-link">Browse All Tasks</a>
+				</div>
+
+				<!-- Jobs Container -->
+				<div class="tasks-list-container compact-list margin-top-35">
+
+					<!-- Task -->
+					<a href="single-task-page.html" class="task-listing">
+
+						<!-- Job Listing Details -->
+						<div class="task-listing-details">
+
+							<!-- Details -->
+							<div class="task-listing-description">
+								<h3 class="task-listing-title">Food Delviery Mobile App</h3>
+								<ul class="task-icons">
+									<li><i class="icon-material-outline-location-on"></i> San Francisco</li>
+									<li><i class="icon-material-outline-access-time"></i> 2 minutes ago</li>
+								</ul>
+								<div class="task-tags margin-top-15">
+									<span>iOS</span>
+									<span>Android</span>
+									<span>mobile apps</span>
+									<span>design</span>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="task-listing-bid">
+							<div class="task-listing-bid-inner">
+								<div class="task-offers">
+									<strong>$1,000 - $2,500</strong>
+									<span>Fixed Price</span>
+								</div>
+								<span class="button button-sliding-icon ripple-effect">Bid Now <i class="icon-material-outline-arrow-right-alt"></i></span>
+							</div>
+						</div>
+					</a>
+
+					<!-- Task -->
+					<a href="single-task-page.html" class="task-listing">
+
+						<!-- Job Listing Details -->
+						<div class="task-listing-details">
+
+							<!-- Details -->
+							<div class="task-listing-description">
+								<h3 class="task-listing-title">2000 Words English to German</h3>
+								<ul class="task-icons">
+									<li><i class="icon-material-outline-location-off"></i> Online Job</li>
+									<li><i class="icon-material-outline-access-time"></i> 5 minutes ago</li>
+								</ul>
+								<div class="task-tags margin-top-15">
+									<span>copywriting</span>
+									<span>translating</span>
+									<span>editing</span>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="task-listing-bid">
+							<div class="task-listing-bid-inner">
+								<div class="task-offers">
+									<strong>$75</strong>
+									<span>Fixed Price</span>
+								</div>
+								<span class="button button-sliding-icon ripple-effect">Bid Now <i class="icon-material-outline-arrow-right-alt"></i></span>
+							</div>
+						</div>
+					</a>
+
+					<!-- Task -->
+					<a href="single-task-page.html" class="task-listing">
+
+						<!-- Job Listing Details -->
+						<div class="task-listing-details">
+
+							<!-- Details -->
+							<div class="task-listing-description">
+								<h3 class="task-listing-title">Fix Python Selenium Code</h3>
+								<ul class="task-icons">
+									<li><i class="icon-material-outline-location-off"></i> Online Job</li>
+									<li><i class="icon-material-outline-access-time"></i> 30 minutes ago</li>
+								</ul>
+								<div class="task-tags margin-top-15">
+									<span>Python</span>
+									<span>Flask</span>
+									<span>API Development</span>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="task-listing-bid">
+							<div class="task-listing-bid-inner">
+								<div class="task-offers">
+									<strong>$100 - $150</strong>
+									<span>Hourly Rate</span>
+								</div>
+								<span class="button button-sliding-icon ripple-effect">Bid Now <i class="icon-material-outline-arrow-right-alt"></i></span>
+							</div>
+						</div>
+					</a>
+
+					<!-- Task -->
+					<a href="single-task-page.html" class="task-listing">
+
+						<!-- Job Listing Details -->
+						<div class="task-listing-details">
+
+							<!-- Details -->
+							<div class="task-listing-description">
+								<h3 class="task-listing-title">WordPress Theme Installation</h3>
+								<ul class="task-icons">
+									<li><i class="icon-material-outline-location-off"></i> Online Job</li>
+									<li><i class="icon-material-outline-access-time"></i> 1 hour ago</li>
+								</ul>
+								<div class="task-tags margin-top-15">
+									<span>WordPress</span>
+									<span>Theme Installation</span>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="task-listing-bid">
+							<div class="task-listing-bid-inner">
+								<div class="task-offers">
+									<strong>$100</strong>
+									<span>Fixed Price</span>
+								</div>
+								<span class="button button-sliding-icon ripple-effect">Bid Now <i class="icon-material-outline-arrow-right-alt"></i></span>
+							</div>
+						</div>
+					</a>
+
+					<!-- Task -->
+					<a href="single-task-page.html" class="task-listing">
+
+						<!-- Job Listing Details -->
+						<div class="task-listing-details">
+
+							<!-- Details -->
+							<div class="task-listing-description">
+								<h3 class="task-listing-title">PHP Core Website Fixes</h3>
+								<ul class="task-icons">
+									<li><i class="icon-material-outline-location-off"></i> Online Job</li>
+									<li><i class="icon-material-outline-access-time"></i> 1 hour ago</li>
+								</ul>
+								<div class="task-tags margin-top-15">
+									<span>PHP</span>
+									<span>MySQL Administration</span>
+									<span>API Development</span>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="task-listing-bid">
+							<div class="task-listing-bid-inner">
+								<div class="task-offers">
+									<strong>$50 - $80</strong>
+									<span>Hourly Rate</span>
+								</div>
+								<span class="button button-sliding-icon ripple-effect">Bid Now <i class="icon-material-outline-arrow-right-alt"></i></span>
+							</div>
+						</div>
+					</a>
 
 
-    <!-- Service Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="section-title text-center">
-                <h1 class="display-5 mb-5">Our Services</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">General Carpentry</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-2.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Furniture Manufacturing</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-3.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Furniture Remodeling</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-4.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Wooden Floor</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-5.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Wooden Furniture</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-6.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Custom Work</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
+				</div>
+				<!-- Jobs Container / End -->
+
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Featured Jobs / End -->
+
+<!-- Icon Boxes -->
+<div class="section padding-top-65 padding-bottom-65">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-xl-12">
+				<!-- Section Headline -->
+				<div class="section-headline centered margin-top-0 margin-bottom-5">
+					<h3>How It Works?</h3>
+				</div>
+			</div>
+
+			<div class="col-xl-4 col-md-4">
+				<!-- Icon Box -->
+				<div class="icon-box with-line">
+					<!-- Icon -->
+					<div class="icon-box-circle">
+						<div class="icon-box-circle-inner">
+							<i class="icon-line-awesome-lock"></i>
+							<div class="icon-box-check"><i class="icon-material-outline-check"></i></div>
+						</div>
+					</div>
+					<h3>Create an Account</h3>
+					<p>Bring to the table win-win survival strategies to ensure proactive domination going forward.</p>
+				</div>
+			</div>
+
+			<div class="col-xl-4 col-md-4">
+				<!-- Icon Box -->
+				<div class="icon-box with-line">
+					<!-- Icon -->
+					<div class="icon-box-circle">
+						<div class="icon-box-circle-inner">
+							<i class="icon-line-awesome-legal"></i>
+							<div class="icon-box-check"><i class="icon-material-outline-check"></i></div>
+						</div>
+					</div>
+					<h3>Post a Task</h3>
+					<p>Efficiently unleash cross-media information without. Quickly maximize return on investment.</p>
+				</div>
+			</div>
+
+			<div class="col-xl-4 col-md-4">
+				<!-- Icon Box -->
+				<div class="icon-box">
+					<!-- Icon -->
+					<div class="icon-box-circle">
+						<div class="icon-box-circle-inner">
+							<i class=" icon-line-awesome-trophy"></i>
+							<div class="icon-box-check"><i class="icon-material-outline-check"></i></div>
+						</div>
+					</div>
+					<h3>Choose an Expert</h3>
+					<p>Nanotechnology immersion along the information highway will close the loop on focusing solely.</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- Icon Boxes / End -->
 
 
-    <!-- Feature Start -->
-    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
-        <div class="container feature px-lg-0">
-            <div class="row g-0 mx-lg-0">
-                <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="p-lg-5 ps-lg-0">
-                        <div class="section-title text-start">
-                            <h1 class="display-5 mb-4">Why Choose Us</h1>
-                        </div>
-                        <p class="mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
-                        <div class="row g-4">
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                                        <i class="fa fa-check fa-2x text-primary"></i>
-                                    </div>
-                                    <div class="ms-4">
-                                        <p class="mb-2">Quality</p>
-                                        <h5 class="mb-0">Services</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                                        <i class="fa fa-user-check fa-2x text-primary"></i>
-                                    </div>
-                                    <div class="ms-4">
-                                        <p class="mb-2">Creative</p>
-                                        <h5 class="mb-0">Designers</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                                        <i class="fa fa-drafting-compass fa-2x text-primary"></i>
-                                    </div>
-                                    <div class="ms-4">
-                                        <p class="mb-2">Free</p>
-                                        <h5 class="mb-0">Consultation</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                                        <i class="fa fa-headphones fa-2x text-primary"></i>
-                                    </div>
-                                    <div class="ms-4">
-                                        <p class="mb-2">Customer</p>
-                                        <h5 class="mb-0">Support</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/feature.jpg" style="object-fit: cover;" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Feature End -->
+<!-- Testimonials -->
+<div class="section gray padding-top-65 padding-bottom-55">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-12">
+				<!-- Section Headline -->
+				<div class="section-headline centered margin-top-0 margin-bottom-5">
+					<h3>Testimonials</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Categories Carousel -->
+	<div class="fullwidth-carousel-container margin-top-20">
+		<div class="testimonial-carousel testimonials">
+
+			<!-- Item -->
+			<div class="fw-carousel-review">
+				<div class="testimonial-box">
+					<div class="testimonial-avatar">
+						<img src="images/user-avatar-small-02.jpg" alt="">
+					</div>
+					<div class="testimonial-author">
+						<h4>Sindy Forest</h4>
+						 <span>Freelancer</span>
+					</div>
+					<div class="testimonial">Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.</div>
+				</div>
+			</div>
+
+			<!-- Item -->
+			<div class="fw-carousel-review">
+				<div class="testimonial-box">
+					<div class="testimonial-avatar">
+						<img src="images/user-avatar-small-01.jpg" alt="">
+					</div>
+					<div class="testimonial-author">
+						<h4>Tom Smith</h4>
+						 <span>Freelancer</span>
+					</div>
+					<div class="testimonial">Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art.</div>
+				</div>
+			</div>
+
+			<!-- Item -->
+			<div class="fw-carousel-review">
+				<div class="testimonial-box">
+					<div class="testimonial-avatar">
+						<img src="images/user-avatar-placeholder.png" alt="">
+					</div>
+					<div class="testimonial-author">
+						<h4>Sebastiano Piccio</h4>
+						 <span>Employer</span>
+					</div>
+					<div class="testimonial">Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art.</div>
+				</div>
+			</div>
+
+			<!-- Item -->
+			<div class="fw-carousel-review">
+				<div class="testimonial-box">
+					<div class="testimonial-avatar">
+						<img src="images/user-avatar-small-03.jpg" alt="">
+					</div>
+					<div class="testimonial-author">
+						<h4>David Peterson</h4>
+						 <span>Freelancer</span>
+					</div>
+					<div class="testimonial">Collaboratively administrate turnkey channels whereas virtual e-tailers. Objectively seize scalable metrics whereas proactive e-services. Seamlessly empower fully researched growth strategies and interoperable sources.</div>
+				</div>
+			</div>
+
+			<!-- Item -->
+			<div class="fw-carousel-review">
+				<div class="testimonial-box">
+					<div class="testimonial-avatar">
+						<img src="images/user-avatar-placeholder.png" alt="">
+					</div>
+					<div class="testimonial-author">
+						<h4>Marcin Kowalski</h4>
+						 <span>Freelancer</span>
+					</div>
+					<div class="testimonial">Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- Categories Carousel / End -->
+
+</div>
+<!-- Testimonials / End -->
 
 
-    <!-- Projects Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="section-title text-center">
-                <h1 class="display-5 mb-5">Our Projects</h1>
-            </div>
-            <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="col-12 text-center">
-                    <ul class="list-inline mb-5" id="portfolio-flters">
-                        <li class="mx-2 active" data-filter="*">All</li>
-                        <li class="mx-2" data-filter=".first">General Carpentry</li>
-                        <li class="mx-2" data-filter=".second">Custom Carpentry</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row g-4 portfolio-container">
-                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="rounded overflow-hidden">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/portfolio-1.jpg" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-1.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="border border-5 border-light border-top-0 p-4">
-                            <p class="text-primary fw-medium mb-2">General Carpentry</p>
-                            <h5 class="lh-base mb-0">Wooden Furniture Manufacturing And Remodeling</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="rounded overflow-hidden">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/portfolio-2.jpg" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-2.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="border border-5 border-light border-top-0 p-4">
-                            <p class="text-primary fw-medium mb-2">Custom Carpentry</p>
-                            <h5 class="lh-base mb-0">Wooden Furniture Manufacturing And Remodeling</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="rounded overflow-hidden">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/portfolio-3.jpg" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-3.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="border border-5 border-light border-top-0 p-4">
-                            <p class="text-primary fw-medium mb-2">General Carpentry</p>
-                            <h5 class="lh-base mb-0">Wooden Furniture Manufacturing And Remodeling</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="rounded overflow-hidden">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/portfolio-4.jpg" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-4.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="border border-5 border-light border-top-0 p-4">
-                            <p class="text-primary fw-medium mb-2">Custom Carpentry</p>
-                            <h5 class="lh-base mb-0">Wooden Furniture Manufacturing And Remodeling</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="rounded overflow-hidden">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/portfolio-5.jpg" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-5.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="border border-5 border-light border-top-0 p-4">
-                            <p class="text-primary fw-medium mb-2">General Carpentry</p>
-                            <h5 class="lh-base mb-0">Wooden Furniture Manufacturing And Remodeling</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="rounded overflow-hidden">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/portfolio-6.jpg" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-6.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="border border-5 border-light border-top-0 p-4">
-                            <p class="text-primary fw-medium mb-2">Custom Carpentry</p>
-                            <h5 class="lh-base mb-0">Wooden Furniture Manufacturing And Remodeling</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Projects End -->
+<!-- Counters -->
+<div class="section padding-top-70 padding-bottom-75">
+	<div class="container">
+		<div class="row">
 
+			<div class="col-xl-12">
+				<div class="counters-container">
 
-    <!-- Quote Start -->
-    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
-        <div class="container quote px-lg-0">
-            <div class="row g-0 mx-lg-0">
-                <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/quote.jpg" style="object-fit: cover;" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="p-lg-5 pe-lg-0">
-                        <div class="section-title text-start">
-                            <h1 class="display-5 mb-4">Free Quote</h1>
-                        </div>
-                        <p class="mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Mobile" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <select class="form-select border-0" style="height: 55px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Service 1</option>
-                                        <option value="2">Service 2</option>
-                                        <option value="3">Service 3</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control border-0" placeholder="Special Note"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Quote End -->
+					<!-- Counter -->
+					<div class="single-counter">
+						<i class="icon-line-awesome-suitcase"></i>
+						<div class="counter-inner">
+							<h3><span class="counter">1,586</span></h3>
+							<span class="counter-title">Jobs Posted</span>
+						</div>
+					</div>
 
+					<!-- Counter -->
+					<div class="single-counter">
+						<i class="icon-line-awesome-legal"></i>
+						<div class="counter-inner">
+							<h3><span class="counter">3,543</span></h3>
+							<span class="counter-title">Tasks Posted</span>
+						</div>
+					</div>
 
-    <!-- Team Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="section-title text-center">
-                <h1 class="display-5 mb-5">Team Members</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center border border-5 border-light border-top-0 p-4">
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center border border-5 border-light border-top-0 p-4">
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid" src="img/team-3.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center border border-5 border-light border-top-0 p-4">
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid" src="img/team-4.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center border border-5 border-light border-top-0 p-4">
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Team End -->
+					<!-- Counter -->
+					<div class="single-counter">
+						<i class="icon-line-awesome-user"></i>
+						<div class="counter-inner">
+							<h3><span class="counter">2,413</span></h3>
+							<span class="counter-title">Active Members</span>
+						</div>
+					</div>
 
+					<!-- Counter -->
+					<div class="single-counter">
+						<i class="icon-line-awesome-trophy"></i>
+						<div class="counter-inner">
+							<h3><span class="counter">99</span>%</h3>
+							<span class="counter-title">Satisfaction Rate</span>
+						</div>
+					</div>
 
-    <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="section-title text-center">
-                <h1 class="display-5 mb-5">Testimonial</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 90px; height: 90px;">
-                    <div class="testimonial-text text-center p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 90px; height: 90px;">
-                    <div class="testimonial-text text-center p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-3.jpg" style="width: 90px; height: 90px;">
-                    <div class="testimonial-text text-center p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Counters / End -->
+
 
 </x-front-layout>

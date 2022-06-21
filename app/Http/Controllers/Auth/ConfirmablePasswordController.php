@@ -37,7 +37,7 @@ class ConfirmablePasswordController extends Controller
             ]);
         }
 
-        $request->session()->put('auth.password_confirmed_at', time());
+        $request->session()->put('auth.password_confirmed_at', time()); //for 3 Hours
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }
