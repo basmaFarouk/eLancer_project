@@ -23,8 +23,8 @@ Freelancer:
 
 
 
-##Samples
-**HomePage**
+## Samples
+- **HomePage**
 ![homepage](https://user-images.githubusercontent.com/97096516/202249551-bfb5c694-02b1-4647-8e1b-c5daa5229574.png)
 
 
@@ -37,6 +37,12 @@ Freelancer:
 **Profile**
 ![profile](https://user-images.githubusercontent.com/97096516/202253095-afc5ab59-acd7-4e80-894e-97deee86bd30.png)
 ![profile2](https://user-images.githubusercontent.com/97096516/202253209-e8ceda92-9916-4fcb-ab2d-e4e82a9f3da2.png)
+
+**Proposals**
+![proposal](https://user-images.githubusercontent.com/97096516/202254039-fcaffde6-3dfa-4f30-b679-b5d8b0f73421.png)
+
+**Change Password**
+![changePassword](https://user-images.githubusercontent.com/97096516/202254247-33e18f63-6909-43f6-8f64-30297e7c7446.png)
 
 
 
