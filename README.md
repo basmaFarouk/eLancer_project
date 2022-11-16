@@ -41,14 +41,25 @@ Freelancer:
 - **Proposals**
 ![proposal](https://user-images.githubusercontent.com/97096516/202254039-fcaffde6-3dfa-4f30-b679-b5d8b0f73421.png)
 
+
 - **Profile**
 ![showProfile](https://user-images.githubusercontent.com/97096516/202254669-dc9062d7-3fdb-4571-89bf-1a3eb69012f3.png)
 
 - **Change Password**
 ![changePassword](https://user-images.githubusercontent.com/97096516/202254247-33e18f63-6909-43f6-8f64-30297e7c7446.png)
 
+
 - **Notification**
 ![notification](https://user-images.githubusercontent.com/97096516/202255458-0c574abc-2342-4f0b-b533-7aa63f0243a1.png)
+
+
+- **Project**
+![project](https://user-images.githubusercontent.com/97096516/202257457-a6a227d8-a604-4737-a890-71bb7940b710.png)
+
+
+- **Apply**
+![apply](https://user-images.githubusercontent.com/97096516/202257691-beccc356-e9c8-4e4b-83da-376f0490afaf.png)
+
 
 - **Client Projects**
 ![clientProjects](https://user-images.githubusercontent.com/97096516/202255613-a43f894f-d6c3-489f-aa35-a1c678e200db.png)
@@ -61,4 +72,20 @@ Freelancer:
 
 - **Proposal Details**
 ![proposalDetails](https://user-images.githubusercontent.com/97096516/202256688-2079b9eb-b82c-457f-96e4-73603490584a.png)
+
+- **Users**
+![users](https://user-images.githubusercontent.com/97096516/202258238-c5ff1651-5865-4d92-847a-aa62ba06c319.png)
+
+- **Assign Role to User**
+![AssignRole](https://user-images.githubusercontent.com/97096516/202258349-8839dedb-65c5-4eb5-8c03-4932d25e5b38.png)
+
+- **Create Role**
+![createRole](https://user-images.githubusercontent.com/97096516/202259211-be835135-472e-42a4-b4d9-e5fab61f4198.png)
+
+- **Edit Role**
+![editRole](https://user-images.githubusercontent.com/97096516/202258906-5e0ee744-f9f2-4c75-8d8c-8b6302bb2468.png)
+
+- **App Settings**
+![appSettings](https://user-images.githubusercontent.com/97096516/202259393-cb88ea0b-2eab-4ab1-ba49-ec3911f9d60e.png)
+
 
