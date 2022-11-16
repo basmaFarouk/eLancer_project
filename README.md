@@ -5,11 +5,11 @@ Elancer is a freelancer project, where freelancer apply to jobs in different cat
 ## Roles
 
 Admin: 
--Manage all the website
--Add categories (crud)
--Add roles to users
--Manage Users
--Manage app settings
+ Manage all the website
+ ,Add categories (crud)
+ ,Add roles to users
+ ,Manage Users
+ ,Manage app settings
 
 Client:
  Add jobs(crud)
@@ -23,7 +23,9 @@ Freelancer:
 
 
 
-![Screenshot 2022-11-16 190729](https://user-images.githubusercontent.com/97096516/202246675-d5867bbd-dec8-4e70-8775-1f8e1e406c60.png)
+##Samples
+HomePage
+![homepage](https://user-images.githubusercontent.com/97096516/202249551-bfb5c694-02b1-4647-8e1b-c5daa5229574.png)
 
 
 
