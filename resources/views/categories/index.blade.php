@@ -2,7 +2,11 @@
 @extends('layouts.dashboard')
 
 @section('title')
-    Categories  <small><a href="{{route('categories.create')}}" class="btn btn-sm btn-outline-primary">+Create Category</a></small>
+    Categories
+    @if (Auth::user()->can('categories.create'))
+
+    <small><a href="{{route('categories.create')}}" class="btn btn-sm btn-outline-primary">+Create Category</a></small>
+    @endif
 @endsection
 
 @section('breadcrump')
@@ -36,14 +40,20 @@
                         <td><?= $raw->created_at?></td>
                         <td>
                             {{-- <a  class="btn btn-primary"  href="categories/<?php echo $raw->id?>/edit">Edit</a> --}}
+
+                            @can('categories.update')
                             <a  class="btn btn-primary"  href="{{route('categories.edit',[$raw->id])}}">Edit</a>
+                            @endcan
 
                             {{-- <form action="/categories/<?php echo $raw->id?>" method="post"> --}}
+                            @if (Gate::allows('categories.delete'))
+
                             <form action="{{route('categories.destroy',[$raw->id])}}" method="post">
                                 <input type="hidden" name="_method" value="delete">
                                 <input type="hidden" name="_token" value="<?= csrf_token()?>">
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
+                            @endif
                         </td>
                     </tr>
                     @endforeach

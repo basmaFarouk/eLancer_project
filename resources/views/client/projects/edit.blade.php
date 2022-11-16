@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout data='Edit Project'>
 
     <form action="{{route('client.projects.update',$project->id)}}" method="POST" enctype="multipart/form-data">
         @csrf

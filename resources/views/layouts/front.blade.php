@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{App::currentLocale()}}" dir="{{LaravelLocalization::getCurrentLocaleDirection()}}">
 <head>
 
 <!-- Basic Page Needs
@@ -10,7 +10,11 @@
 
 <!-- CSS
 ================================================== -->
+@if (LaravelLocalization::getCurrentLocaleDirection()=='rtl')
+<link rel="stylesheet" href="{{asset('assets/front/css/style.rtl.css')}}">
+@else
 <link rel="stylesheet" href="{{asset('assets/front/css/style.css')}}">
+@endif
 <link rel="stylesheet" href="{{asset('assets/front/css/colors/blue.css')}}">
 
 </head>
@@ -39,17 +43,20 @@
 				<nav id="navigation">
 					<ul id="responsive">
 
-						<li><a href="#" class="current">Home</a>
-							<ul class="dropdown-nav">
+						<li><a href="{{route('home')}}" class="current">{{__('Home')}}</a>
+							{{-- <ul class="dropdown-nav">
 								<li><a href="index.html">Home 1</a></li>
 								<li><a href="index-2.html">Home 2</a></li>
 								<li><a href="index-3.html">Home 3</a></li>
-							</ul>
+							</ul> --}}
 						</li>
 
-						<li><a href="#">Find Work</a>
+
+						</li>
+
+						{{-- <li><a href="#">Find Work</a>
 							<ul class="dropdown-nav">
-								<li><a href="#">Browse Jobs</a>
+								<li><a href="#">{{__("Browse Jobs")}}</a>
 									<ul class="dropdown-nav">
 										<li><a href="jobs-list-layout-full-page-map.html">Full Page List + Map</a></li>
 										<li><a href="jobs-grid-layout-full-page-map.html">Full Page Grid + Map</a></li>
@@ -74,7 +81,7 @@
 							</ul>
 						</li>
 
-						<li><a href="#">For Employers</a>
+						<li><a href="#">{{__("For Employers")}}</a>
 							<ul class="dropdown-nav">
 								<li><a href="#">Find a Freelancer</a>
 									<ul class="dropdown-nav">
@@ -88,9 +95,9 @@
 								<li><a href="dashboard-post-a-job.html">Post a Job</a></li>
 								<li><a href="dashboard-post-a-task.html">Post a Task</a></li>
 							</ul>
-						</li>
+						</li> --}}
 
-						<li><a href="#">Dashboard</a>
+						{{-- <li><a href="#">Dashboard</a>
 							<ul class="dropdown-nav">
 								<li><a href="dashboard.html">Dashboard</a></li>
 								<li><a href="dashboard-messages.html">Messages</a></li>
@@ -113,12 +120,11 @@
 								</li>
 								<li><a href="dashboard-settings.html">Settings</a></li>
 							</ul>
-						</li>
+						</li> --}}
 
-						<li><a href="#">Pages</a>
+						{{-- <li><a href="#">{{__('Pages')}}</a>
 							<ul class="dropdown-nav">
-								<li><a href="pages-blog.html">Blog</a></li>
-								<li><a href="pages-pricing-plans.html">Pricing Plans</a></li>
+
 								<li><a href="pages-checkout-page.html">Checkout Page</a></li>
 								<li><a href="pages-invoice-template.html">Invoice Template</a></li>
 								<li><a href="pages-user-interface-elements.html">User Interface Elements</a></li>
@@ -127,8 +133,20 @@
 								<li><a href="pages-404.html">404 Page</a></li>
 								<li><a href="pages-contact.html">Contact</a></li>
 							</ul>
-						</li>
+						</li> --}}
 
+                        {{-- <li>
+                            <a href="#" class="current">{{__('Langauge')}}</a>
+                            <ul class="dropdown-nav">
+                                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                <li>
+                                    <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                        {{ $properties['native'] }}
+                                    </a>
+                                </li>
+                                @endforeach
+                            </ul>
+                        </li> --}}
 					</ul>
 				</nav>
 				<div class="clearfix"></div>
@@ -137,147 +155,22 @@
 			</div>
 			<!-- Left Side Content / End -->
 
+            @guest
 
+            <div class="right-side button ripple-effect">
+                <li><a href="{{route('login')}}" class="current right button ripple-effect" style="display: flex">{{__('Login')}}</a>
+            </div>
+            @endguest
 			<!-- Right Side Content / End -->
 			<div class="right-side">
 
 				<!--  User Notifications -->
-				<div class="header-widget hide-on-mobile">
-
-					<!-- Notifications -->
-					<div class="header-notifications">
-
-						<!-- Trigger -->
-						<div class="header-notifications-trigger">
-							<a href="#"><i class="icon-feather-bell"></i><span>4</span></a>
-						</div>
-
-						<!-- Dropdown -->
-						<div class="header-notifications-dropdown">
-
-							<div class="header-notifications-headline">
-								<h4>Notifications</h4>
-								<button class="mark-as-read ripple-effect-dark" title="Mark all as read" data-tippy-placement="left">
-									<i class="icon-feather-check-square"></i>
-								</button>
-							</div>
-
-							<div class="header-notifications-content">
-								<div class="header-notifications-scroll" data-simplebar>
-									<ul>
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="dashboard-manage-candidates.html">
-												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
-												<span class="notification-text">
-													<strong>Michael Shannah</strong> applied for a job <span class="color">Full Stack Software Engineer</span>
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="dashboard-manage-bidders.html">
-												<span class="notification-icon"><i class=" icon-material-outline-gavel"></i></span>
-												<span class="notification-text">
-													<strong>Gilbert Allanis</strong> placed a bid on your <span class="color">iOS App Development</span> project
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="dashboard-manage-jobs.html">
-												<span class="notification-icon"><i class="icon-material-outline-autorenew"></i></span>
-												<span class="notification-text">
-													Your job listing <span class="color">Full Stack PHP Developer</span> is expiring.
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="dashboard-manage-candidates.html">
-												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
-												<span class="notification-text">
-													<strong>Sindy Forrest</strong> applied for a job <span class="color">Full Stack Software Engineer</span>
-												</span>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-						</div>
-
-					</div>
-
-					<!-- Messages -->
-					<div class="header-notifications">
-						<div class="header-notifications-trigger">
-							<a href="#"><i class="icon-feather-mail"></i><span>3</span></a>
-						</div>
-
-						<!-- Dropdown -->
-						<div class="header-notifications-dropdown">
-
-							<div class="header-notifications-headline">
-								<h4>Messages</h4>
-								<button class="mark-as-read ripple-effect-dark" title="Mark all as read" data-tippy-placement="left">
-									<i class="icon-feather-check-square"></i>
-								</button>
-							</div>
-
-							<div class="header-notifications-content">
-								<div class="header-notifications-scroll" data-simplebar>
-									<ul>
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="dashboard-messages.html">
-												<span class="notification-avatar status-online"><img src="images/user-avatar-small-03.jpg" alt=""></span>
-												<div class="notification-text">
-													<strong>David Peterson</strong>
-													<p class="notification-msg-text">Thanks for reaching out. I'm quite busy right now on many...</p>
-													<span class="color">4 hours ago</span>
-												</div>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="dashboard-messages.html">
-												<span class="notification-avatar status-offline"><img src="images/user-avatar-small-02.jpg" alt=""></span>
-												<div class="notification-text">
-													<strong>Sindy Forest</strong>
-													<p class="notification-msg-text">Hi Tom! Hate to break it to you, but I'm actually on vacation until...</p>
-													<span class="color">Yesterday</span>
-												</div>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="dashboard-messages.html">
-												<span class="notification-avatar status-online"><img src="images/user-avatar-placeholder.png" alt=""></span>
-												<div class="notification-text">
-													<strong>Marcin Kowalski</strong>
-													<p class="notification-msg-text">I received payment. Thanks for cooperation!</p>
-													<span class="color">Yesterday</span>
-												</div>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<a href="dashboard-messages.html" class="header-notifications-button ripple-effect button-sliding-icon">View All Messages<i class="icon-material-outline-arrow-right-alt"></i></a>
-						</div>
-					</div>
-
-				</div>
-				<!--  User Notifications / End -->
                 @auth
 
+                <x-notification-menu  count="5" />
+                @endauth
+				<!--  User Notifications / End -->
+                @auth
 
 				<!-- User Menu -->
 				<div class="header-widget">
@@ -285,7 +178,7 @@
 					<!-- Messages -->
 					<div class="header-notifications user-menu">
 						<div class="header-notifications-trigger">
-							<a href="#"><div class="user-avatar status-online"><img src="images/user-avatar-small-01.jpg" alt=""></div></a>
+							<a href="#"><div class="user-avatar status-online"><img src="{{auth()->user()->profile_photo_url}}" alt=""></div></a>
 						</div>
 
 						<!-- Dropdown -->
@@ -296,9 +189,9 @@
 
 								<!-- User Name / Avatar -->
 								<div class="user-details">
-									<div class="user-avatar status-online"><img src="images/user-avatar-small-01.jpg" alt=""></div>
+									<div class="user-avatar status-online"><img src="{{auth()->user()->profile_photo_url}}" alt=""></div>
 									<div class="user-name">
-										{{Auth::user()->name}} <span>Freelancer</span>
+										{{Auth::user()->name}} <span>{{Auth::user()->type}}</span>
 									</div>
 								</div>
 
@@ -312,8 +205,11 @@
 						</div>
 
 						<ul class="user-menu-small-nav">
-							<li><a href="dashboard.html"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
-							<li><a href="dashboard-settings.html"><i class="icon-material-outline-settings"></i> Settings</a></li>
+							<li><a href="{{route('freelancer.profile.edit')}}"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
+                            @if (Auth::user()->type == 'freelancer')
+
+							<li><a href="{{route('freelancer.profile.show',auth()->user()->id)}}"><i class="icon-material-outline-settings"></i> profile</a></li>
+                            @endif
                             <form action="{{route('logout')}}" method="POST">
                                 @csrf
                                 <li><button type="submit"><i class="icon-material-outline-power-settings-new"></i> Logout</button></li>
@@ -355,7 +251,7 @@
 <div id="footer">
 
 	<!-- Footer Top Section -->
-	<div class="footer-top-section">
+	{{-- <div class="footer-top-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
@@ -422,11 +318,11 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!-- Footer Top Section / End -->
 
 	<!-- Footer Middle Section -->
-	<div class="footer-middle-section">
+	{{-- <div class="footer-middle-section">
 		<div class="container">
 			<div class="row">
 
@@ -490,7 +386,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!-- Footer Middle Section / End -->
 
 	<!-- Footer Copyrights -->
@@ -527,6 +423,10 @@
 <script src="{{asset('assets/front/js/magnific-popup.min.js')}}"></script>
 <script src="{{asset('assets/front/js/slick.min.js')}}"></script>
 <script src="{{asset('assets/front/js/custom.js')}}"></script>
+<script>
+    const userId={{Auth::id()}}
+</script>
+<script src="{{asset('js/app.js')}}"></script>
 
 <!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
 <script>

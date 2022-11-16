@@ -13,6 +13,15 @@ use Illuminate\Validation\ValidationException;
 
 class AuthenticatedSessionController extends Controller
 {
+
+    protected $guard = 'web';
+    public function __construct(Request $request)
+    {
+        if($request->is('admin/*')){
+            $this->guard='admin';
+        }
+    }
+
     /**
      * Display the login view.
      *
@@ -20,7 +29,9 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
-        return view('auth.login');
+        return view('auth.login',[
+            'routePrefix'=>$this->guard=='admin' ? 'admin.' : ''
+        ]);
     }
 
     /**
@@ -31,26 +42,29 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        // $request->authenticate();
+        $request->authenticate($this->guard);
 
-        Auth::attempt([
-            'email'=>$request->post('email'),
-            'password' => $request->post('password')
-        ]);
+        // Auth::attempt([
+        //     'email'=>$request->post('email'),
+        //     'password' => $request->post('password')
+        // ]);
+            // == بيساوي اللي تحت
+        // $user=User::where('email',$request->post('email'))
+        //           -orWhere('mobile','=',$request->post('email'))
+        // // ->where('password',Hash::make($request->post('password'))) الهاش كل مرة هتطلع باسوورد مختلف
 
-        $user=User::where('email',$request->post('email'))
-        // ->where('password',Hash::make($request->post('password'))) الهاش كل مرة هتطلع باسوورد مختلف
-        ->first();
-        if(!$user || !Hash::check($request->post('password'),$user->password)){
-            throw ValidationException::withMessages([
-                'email'=>'invalid credentials',
-            ]);
-        }
-        Auth::login($user); //create session for the user and the user is authenticated
+        // ->first();
+        // if(!$user || !Hash::check($request->post('password'),$user->password)){
+        //     throw ValidationException::withMessages([
+        //         'email'=>'invalid credentials',
+        //     ]);
+        // }
+        // Auth::login($user); //create session for the user and the user is authenticated
 
+        // Auth::login($user);
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect()->intended($this->guard=='admin' ? '/dashboard/categories': RouteServiceProvider::HOME);
     }
 
     /**
@@ -61,7 +75,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request)
     {
-        Auth::guard('web')->logout();
+        Auth::guard($this->guard)->logout();
 
         $request->session()->invalidate();
 

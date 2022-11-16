@@ -82,14 +82,30 @@
                             <div class="submit-field">
                                 <h5>Job Description</h5>
                                 <x-form.textarea name="description" id="description" :value="$project->description" cols="30" rows="5" class="with-border" />
-                                <div class="uploadButton margin-top-30">
-                                    <input class="uploadButton-input" name="attachments[]" type="file" accept="image/*, application/pdf"
+                                <div class="uploadButton margin-top-30 ">
+                                    <input class="uploadButton-input pe-5" name="attachments[]" type="file" accept="image/*, application/pdf"
                                         id="upload" multiple />
                                     <label class="uploadButton-button ripple-effect" for="upload">Upload
                                         Files</label>
-                                    <span class="uploadButton-file-name">Images or documents that might be helpful in
-                                        describing your job</span>
+
+                                    {{-- <span class="uploadButton-file-name">Images or documents that might be helpful in
+                                        describing your job</span> --}}
+                                        <br>
+                                        {{-- <input type="file" name="project_photo"> --}}
                                 </div>
+
+
+                                <div class="uploadButton margin-top-30 ">
+                                    <input class="uploadButton-input pe-5" name="project_photo" type="file" accept="image/*, application/pdf"
+                                        id="upload2" multiple />
+                                    <label class="uploadButton-button ripple-effect" for="upload2">Upload
+                                        Project Photo</label>
+
+                                    {{-- <span class="uploadButton-file-name">Images or documents that might be helpful in
+                                        describing your job</span> --}}
+
+                                </div>
+
 
                                 @if (is_array($project->attachments))
                                 <div>

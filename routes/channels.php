@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Broadcast;
 |
 */
 
-Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
+Broadcast::channel('App.Models.User.{id}', function ($user, $id) { //$id ->هو الاي دي بتاع الشخص صاحب البروجيكت
     return (int) $user->id === (int) $id;
+}); //التشانل الخاصة بالنوتيفيكشن .. $user->current authenticated user
+
+Broadcast::channel('messages.{id}',function($user,$id){
+    if($user->id==$id){
+
+        return $user;
+    }
 });

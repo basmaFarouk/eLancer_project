@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout data='Create Project'>
 
         <form action="{{route('client.projects.store')}}" method="POST" enctype="multipart/form-data">
             @csrf

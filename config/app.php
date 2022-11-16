@@ -191,10 +191,10 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        App\Providers\FortifyServiceProvider::class,
     ],
 
     /*
@@ -210,6 +210,11 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Currency'=>App\Facades\Currency::class,
     ])->toArray(),
+
+
+    'api_key'=>env("API_KEY"),   //nnnneeeewww
+    'currency'=>'USD',          //nnneeeewwwww
 
 ];

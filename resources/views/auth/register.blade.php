@@ -72,6 +72,7 @@
 						<input type="text" class="input-text with-border" name="email" id="emailaddress-register" placeholder="Email Address" required/>
 					</div>
 
+
 					<div class="input-with-icon-left" title="Should be at least 8 characters long" data-tippy-placement="bottom">
 						<i class="icon-material-outline-lock"></i>
 						<input type="password" class="input-text with-border" name="password" id="password-register" placeholder="Password" required/>
@@ -81,6 +82,14 @@
 						<i class="icon-material-outline-lock"></i>
 						<input type="password" class="input-text with-border" name="password_confirmation" id="password-repeat-register" placeholder="Repeat Password" required/>
 					</div>
+                    {{-- <label for="type">Account Type</label> --}}
+                    <div class="input-with-icon-left">
+                        <select name="type" id="type" title="Select Job Type">
+                            <option value="client">Client</option>
+                            <option value="freelancer">Freelancer</option>
+                        </select>
+                    </div>
+
                     <!-- Button -->
 				<button class="button full-width button-sliding-icon ripple-effect margin-top-10" type="submit" >Register <i class="icon-material-outline-arrow-right-alt"></i></button>
 				</form>
@@ -88,11 +97,11 @@
 
 
 				<!-- Social Login -->
-				<div class="social-login-separator"><span>or</span></div>
+				{{-- <div class="social-login-separator"><span>or</span></div>
 				<div class="social-login-buttons">
 					<button class="facebook-login ripple-effect"><i class="icon-brand-facebook-f"></i> Register via Facebook</button>
 					<button class="google-login ripple-effect"><i class="icon-brand-google-plus-g"></i> Register via Google+</button>
-				</div>
+				</div> --}}
 			</div>
 
 		</div>

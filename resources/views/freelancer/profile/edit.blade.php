@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout data='Edit Profile'>
 
     <x-slot name="title"> M Account</x-slot>
 
@@ -16,6 +16,7 @@
 						<!-- Headline -->
 						<div class="headline">
 							<h3><i class="icon-material-outline-account-circle"></i> </h3>
+                            <p> <x-flash-message /> <p>
 						</div>
 
 
@@ -66,15 +67,19 @@
 											<div class="submit-field">
 												<h5>Account Type</h5>
 												<div class="account-type">
+                                                    @if ($user->type == 'freelancer')
+
+
 													<div>
 														<input type="radio" name="account-type-radio" id="freelancer-radio" class="account-type-radio" checked/>
 														<label for="freelancer-radio" class="ripple-effect-dark"><i class="icon-material-outline-account-circle"></i> Freelancer</label>
 													</div>
-
+                                                    @else
 													<div>
-														<input type="radio" name="account-type-radio" id="employer-radio" class="account-type-radio"/>
+														<input type="radio" name="account-type-radio" id="employer-radio" class="account-type-radio" checked/>
 														<label for="employer-radio" class="ripple-effect-dark"><i class="icon-material-outline-business-center"></i> Employer</label>
 													</div>
+                                                    @endif
 												</div>
 											</div>
 										</div>
@@ -133,15 +138,15 @@
 											<!-- Skills List -->
 											<div class="keywords-container">
 												<div class="keyword-input-container">
-													<input type="text" class="keyword-input with-border" placeholder="e.g. Angular, Laravel"/>
+													<input type="text" id="skills" class="keyword-input with-border" placeholder="e.g. Angular, Laravel" name="skills" value="{{implode(',',$skills) ?? ''}}"/>
 													<button class="keyword-input-button ripple-effect"><i class="icon-material-outline-add"></i></button>
 												</div>
+
+
 												<div class="keywords-list">
-													<span class="keyword"><span class="keyword-remove"></span><span class="keyword-text">Angular</span></span>
-													<span class="keyword"><span class="keyword-remove"></span><span class="keyword-text">Vue JS</span></span>
-													<span class="keyword"><span class="keyword-remove"></span><span class="keyword-text">iOS</span></span>
-													<span class="keyword"><span class="keyword-remove"></span><span class="keyword-text">Android</span></span>
-													<span class="keyword"><span class="keyword-remove"></span><span class="keyword-text">Laravel</span></span>
+                                                    @foreach ($user->skills as $skill)
+													<span class="keyword"><span class="keyword-remove"></span><span class="keyword-text">{{$skill->name}}</span></span>
+                                                    @endforeach
 												</div>
 												<div class="clearfix"></div>
 											</div>
@@ -157,20 +162,23 @@
 												<div class="attachment-box ripple-effect">
 													<span>Cover Letter</span>
 													<i>PDF</i>
-													<button class="remove-attachment" data-tippy-placement="top" title="Remove"></button>
+													{{-- <button class="remove-attachment" data-tippy-placement="top" title="Remove"></button> --}}
 												</div>
-												<div class="attachment-box ripple-effect">
-													<span>Contract</span>
-													<i>DOCX</i>
-													<button class="remove-attachment" data-tippy-placement="top" title="Remove"></button>
+												<div  class="ripple-effect">
+													{{-- <span>Contract</span>
+													<i>DOCX</i> --}}
+                                                    @if ($profile->attachment)
+
+													<a href="{{asset('uploads/'.$profile->attachment)}}" class="button ripple-effect" >Download CV</a>
+                                                    @endif
 												</div>
 											</div>
 											<div class="clearfix"></div>
 
 											<!-- Upload Button -->
 											<div class="uploadButton margin-top-0">
-												<input class="uploadButton-input" type="file" accept="image/*, application/pdf" id="upload" multiple/>
-												<label class="uploadButton-button ripple-effect" for="upload">Upload Files</label>
+												<input class="uploadButton-input" type="file" accept="image/*, application/pdf" id="upload" name="cv"/>
+												<label class="uploadButton-button ripple-effect" for="upload">Upload CV</label>
 												<span class="uploadButton-file-name">Maximum file size: 10 MB</span>
 											</div>
 
@@ -209,7 +217,7 @@
 				</div>
 
 				<!-- Dashboard Box -->
-				<div class="col-xl-12">
+				{{-- <div class="col-xl-12">
 					<div id="test1" class="dashboard-box">
 
 						<!-- Headline -->
@@ -222,21 +230,21 @@
 								<div class="col-xl-4">
 									<div class="submit-field">
 										<h5>Current Password</h5>
-										<input type="password" class="with-border">
+										<input type="password" class="with-border" name="current_pass">
 									</div>
 								</div>
 
 								<div class="col-xl-4">
 									<div class="submit-field">
 										<h5>New Password</h5>
-										<input type="password" class="with-border">
+										<input type="password" class="with-border" name="passowrd">
 									</div>
 								</div>
 
 								<div class="col-xl-4">
 									<div class="submit-field">
 										<h5>Repeat New Password</h5>
-										<input type="password" class="with-border">
+										<input type="password" class="with-border" name="password_confirmation">
 									</div>
 								</div>
 
@@ -249,7 +257,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 
 				<!-- Button -->
 				<div class="col-xl-12">

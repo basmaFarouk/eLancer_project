@@ -18,7 +18,7 @@
   <div class="mb-3">
 
     <x-form.select id="parent_id" name="parent_id" label="Parent" :options="$data->pluck('name','id')" :selected="$category->parent_id" />
-      
+
 
 
     {{-- <label for="parent_id" class="form-label">Parent </label>
@@ -39,7 +39,7 @@
     @error('image')
     <p class="text-danger">{{$message}}</p>
     @enderror --}}
-    <x-form.input label="Image" type="file" name="image" id="image" />
+    <x-form.input label="Image" type="file" name="category_image" id="image" />
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>

@@ -13,7 +13,7 @@ class Freelancer extends Model
     protected $casts=['birthday'=>'date'];
 
     protected $fillable=['first_name','last_name','gender','description','country','birthday',
-    'title','hourly_rate','profile_photo_path'];
+    'title','hourly_rate','profile_photo_path','attachment'];
 
     public function user(){
         return $this->belongsTo(User::class,'user_id','id');

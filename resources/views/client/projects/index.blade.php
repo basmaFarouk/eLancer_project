@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout data='Projects'>
 
     			<!-- Row -->
 			<div class="row">
@@ -10,6 +10,7 @@
 						<!-- Headline -->
 						<div class="headline">
 							<h3><i class="icon-material-outline-business-center"></i> My Job Listings</h3>
+                            <p> <x-flash-message /> </p>
 						</div>
 
 						<div class="content">
@@ -31,13 +32,13 @@
 
 											<!-- Details -->
 											<div class="job-listing-description">
-												<h3 class="job-listing-title"><a href="#">{{$project->title}}</a> <span class="dashboard-status-button green">{{$project->status}}</span></h3>
+												<h3 class="job-listing-title"><a href="{{route('projects.show',$project->id)}}">{{$project->title}}</a> <span class="dashboard-status-button green">{{$project->status}}</span></h3>
 
 												<!-- Job Listing Footer -->
 												<div class="job-listing-footer">
 													<ul>
 														<li><i class="icon-material-outline-date-range"></i> Posted on {{$project->created_at}}</li>
-														<li><i class="icon-material-outline-date-range"></i> Category : {{$project->category->parent->name}} // {{$project->category->name}}</li>
+														<li><i class="icon-material-outline-date-range"></i> Category : {{$project->category->parent->name ?? ''}} // {{$project->category->name ?? ''}}</li>
                                                         <li>
                                                             @foreach ($project->tags as $tag)
                                                                 <span class="badge rounded-pill text-bg-success">{{$tag->name}}</span>
@@ -51,7 +52,7 @@
 
 									<!-- Buttons -->
 									<div class="buttons-to-right always-visible">
-										<a href="dashboard-manage-candidates.html" class="button ripple-effect"><i class="icon-material-outline-supervisor-account"></i> Manage Candidates <span class="button-info">0</span></a>
+										<a href="{{route('client.candidate',$project->id)}}" class="button ripple-effect"><i class="icon-material-outline-supervisor-account"></i> Manage Candidates <span class="button-info">{{$project->proposedFreelnacers()->count()}}</span></a>
 										<a href="{{route('client.projects.edit',$project->id)}}" class="button gray ripple-effect ico" title="Edit" data-tippy-placement="top"><i class="icon-feather-edit"></i></a>
                                         <form action="{{route('client.projects.destroy',$project->id)}}" method="POST" style="display: inline">
                                             @csrf
@@ -65,6 +66,7 @@
 
 							</ul>
 						</div>
+                         {{$projects->links()}}
 					</div>
 				</div>
 

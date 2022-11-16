@@ -45,8 +45,14 @@ class ProjectsController extends Controller
 
 
         $projects = Project::with('category')->where('user_id',$user->id)->paginate();
-        $projects = $user->projects()->with('category.parent','tags')->paginate();
-
+        // $projects = $user->projects()->with('category.parent','tags')->dd();
+          $projects = $user->projects()
+         // ->closed()
+          //->hourly()
+         ->withoutGlobalScope('active')
+         //->filter(['budget_min'=>600,'status'=>'closed'])
+         ->high()
+          ->with('category.parent','tags')->paginate(3);
 
         return view('client.projects.index',['projects'=>$projects]);
     }
@@ -100,6 +106,12 @@ class ProjectsController extends Controller
         // }
         // return $request->all();
 
+        if($request->hasFile('project_photo')){
+            $FinalName = uniqid().'.'.$request->project_photo->extension();
+            if($request->project_photo->move(public_path('/project'),$FinalName)){
+                $data['project_photo']=$FinalName;
+            }
+        }
         $user = $request->user();
         // $request->merge([
         //     'user_id'=>$user->id  //Auth::id()
@@ -111,7 +123,7 @@ class ProjectsController extends Controller
         $tags=$request->input('tags');
         $tags=explode(',',$tags);
         $project->syncTags($tags);
-        return redirect()->route('client.projects.index')->with(['Success '=>'Project Added']);
+        return redirect()->route('client.projects.index')->with(['message'=>__('Project Added')]);
     }
 
     /**
@@ -158,18 +170,28 @@ class ProjectsController extends Controller
     public function update(ProjectRequest $request, $id)
     {
         //
+        // dd($request);
         $user=Auth::user();
         $project=$user->projects()->findOrFail($id); //عشان محدش يقدر يجيب بروجكتس مش بتاعته
         $data=$request->except('attachments');
-
         $data['attachments']=array_merge(($project->attachments ?? []),$this->uploadAttachments($request) ?? []);
+        if($request->hasFile('project_photo')){
+            $FinalName = uniqid().'.'.$request->project_photo->extension();
+            if($request->project_photo->move(public_path('/project'),$FinalName)){
+                $data['project_photo']=$FinalName;
+                if($project->project_photo){
+                    unlink(public_path('project/'.$project->project_photo));
+                }
+
+            }
+        }
         $project->update($data);
 
         //Update Tags
         $tags=$request->input('tags');
         $tags=explode(',',$tags);
         $project->syncTags($tags);
-        return redirect()->route('client.projects.index')->with(['Success '=>'Project Updated']);
+        return redirect()->route('client.projects.index')->with(['message'=>'Project Updated']);
     }
 
     /**
@@ -186,12 +208,13 @@ class ProjectsController extends Controller
         $project=$user->projects()->findOrFail($id);
         // $project->delete();
         foreach($project->attachments as $file){
-
                 // dd($file);
             //unlink(storage_path('app/public'.$file));
-            Storage::disk('public')->delete($file);
+            // unlink(public_path('uploads/attachments/'.basename($file)));
+            Storage::disk('uploads')->delete($file);
         }
-        return redirect()->route('client.projects.index')->with(['Success '=>'Project Deleted']);
+        $project->delete();
+        return redirect()->route('client.projects.index')->with(['message'=>'Project Deleted']);
     }
 
     // public function deleteAttchment($id,$name){

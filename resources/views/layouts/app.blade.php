@@ -4,7 +4,7 @@
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>Hireo</title>
+<title>E-lancer</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -37,10 +37,10 @@
 				</div>
 
 				<!-- Main Navigation -->
-				<nav id="navigation">
+				 <nav id="navigation">
 					<ul id="responsive">
 
-						<li><a href="#">Home</a>
+						<li><a href="{{route('home')}}">Home</a>
 							<ul class="dropdown-nav">
 								<li><a href="index.html">Home 1</a></li>
 								<li><a href="index-2.html">Home 2</a></li>
@@ -48,7 +48,7 @@
 							</ul>
 						</li>
 
-						<li><a href="#">Find Work</a>
+					{{--	<li><a href="#">Find Work</a>
 							<ul class="dropdown-nav">
 								<li><a href="#">Browse Jobs</a>
 									<ul class="dropdown-nav">
@@ -128,7 +128,7 @@
 								<li><a href="pages-404.html">404 Page</a></li>
 								<li><a href="pages-contact.html">Contact</a></li>
 							</ul>
-						</li>
+						</li>--}}
 
 					</ul>
 				</nav>
@@ -142,141 +142,9 @@
 			<!-- Right Side Content / End -->
 			<div class="right-side">
 
-				<!--  User Notifications -->
-				<div class="header-widget hide-on-mobile">
+                <x-notification-menu  count="5" />
 
-					<!-- Notifications -->
-					<div class="header-notifications">
 
-						<!-- Trigger -->
-						<div class="header-notifications-trigger">
-							<a href="#"><i class="icon-feather-bell"></i><span>4</span></a>
-						</div>
-
-						<!-- Dropdown -->
-						<div class="header-notifications-dropdown">
-
-							<div class="header-notifications-headline">
-								<h4>Notifications</h4>
-								<button class="mark-as-read ripple-effect-dark" title="Mark all as read" data-tippy-placement="left">
-									<i class="icon-feather-check-square"></i>
-								</button>
-							</div>
-
-							<div class="header-notifications-content">
-								<div class="header-notifications-scroll" data-simplebar>
-									<ul>
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="dashboard-manage-candidates.html">
-												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
-												<span class="notification-text">
-													<strong>Michael Shannah</strong> applied for a job <span class="color">Full Stack Software Engineer</span>
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="dashboard-manage-bidders.html">
-												<span class="notification-icon"><i class=" icon-material-outline-gavel"></i></span>
-												<span class="notification-text">
-													<strong>Gilbert Allanis</strong> placed a bid on your <span class="color">iOS App Development</span> project
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="dashboard-manage-jobs.html">
-												<span class="notification-icon"><i class="icon-material-outline-autorenew"></i></span>
-												<span class="notification-text">
-													Your job listing <span class="color">Full Stack PHP Developer</span> is expiring.
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="dashboard-manage-candidates.html">
-												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
-												<span class="notification-text">
-													<strong>Sindy Forrest</strong> applied for a job <span class="color">Full Stack Software Engineer</span>
-												</span>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-						</div>
-
-					</div>
-
-					<!-- Messages -->
-					<div class="header-notifications">
-						<div class="header-notifications-trigger">
-							<a href="#"><i class="icon-feather-mail"></i><span>3</span></a>
-						</div>
-
-						<!-- Dropdown -->
-						<div class="header-notifications-dropdown">
-
-							<div class="header-notifications-headline">
-								<h4>Messages</h4>
-								<button class="mark-as-read ripple-effect-dark" title="Mark all as read" data-tippy-placement="left">
-									<i class="icon-feather-check-square"></i>
-								</button>
-							</div>
-
-							<div class="header-notifications-content">
-								<div class="header-notifications-scroll" data-simplebar>
-									<ul>
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="dashboard-messages.html">
-												<span class="notification-avatar status-online"><img src="images/user-avatar-small-03.jpg" alt=""></span>
-												<div class="notification-text">
-													<strong>David Peterson</strong>
-													<p class="notification-msg-text">Thanks for reaching out. I'm quite busy right now on many...</p>
-													<span class="color">4 hours ago</span>
-												</div>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="dashboard-messages.html">
-												<span class="notification-avatar status-offline"><img src="images/user-avatar-small-02.jpg" alt=""></span>
-												<div class="notification-text">
-													<strong>Sindy Forest</strong>
-													<p class="notification-msg-text">Hi Tom! Hate to break it to you, but I'm actually on vacation until...</p>
-													<span class="color">Yesterday</span>
-												</div>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="dashboard-messages.html">
-												<span class="notification-avatar status-online"><img src="images/user-avatar-placeholder.png" alt=""></span>
-												<div class="notification-text">
-													<strong>Marcin Kowalski</strong>
-													<p class="notification-msg-text">I received payment. Thanks for cooperation!</p>
-													<span class="color">Yesterday</span>
-												</div>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<a href="dashboard-messages.html" class="header-notifications-button ripple-effect button-sliding-icon">View All Messages<i class="icon-material-outline-arrow-right-alt"></i></a>
-						</div>
-					</div>
-
-				</div>
-				<!--  User Notifications / End -->
                 @auth
 
 
@@ -306,9 +174,9 @@
 
 								<!-- User Name / Avatar -->
 								<div class="user-details">
-									<div class="user-avatar status-online"><img src="images/user-avatar-small-01.jpg" alt=""></div>
+									<div class="user-avatar status-online"><img src="{{auth()->user()->profile_photo_url}}" alt=""></div>
 									<div class="user-name">
-										{{Auth::user()->name}} <span>Freelancer</span>
+										{{Auth::user()->name}} <span>{{Auth::user()->type}}</span>
 									</div>
 								</div>
 
@@ -322,8 +190,16 @@
 						</div>
 
 						<ul class="user-menu-small-nav">
-							<li><a href="dashboard.html"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
-							<li><a href="dashboard-settings.html"><i class="icon-material-outline-settings"></i> Settings</a></li>
+                            @if (Auth::user()->type == 'freelancer')
+                                <li><a href="{{route('freelancer.profile.edit')}}"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
+                                <li><a href="{{route('freelancer.profile.show',auth()->user()->id)}}"><i class="icon-material-outline-settings"></i> profile</a></li>
+                            @else
+                            <li><a href="{{route('client.projects.index')}}"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
+                            @endif
+                            @if (Auth::user()->type == 'freelancer')
+
+
+                            @endif
                             <form action="{{route('logout')}}" method="POST">
                                 @csrf
                                 <li><button type="submit"><i class="icon-material-outline-power-settings-new"></i> Logout</button></li>
@@ -381,34 +257,46 @@
 				<div class="dashboard-nav">
 					<div class="dashboard-nav-inner">
 
-						<ul data-submenu-title="Start">
+						{{-- <ul data-submenu-title="Start">
 							<li><a href="dashboard.html"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
 							<li><a href="dashboard-messages.html"><i class="icon-material-outline-question-answer"></i> Messages <span class="nav-tag">2</span></a></li>
 							<li><a href="dashboard-bookmarks.html"><i class="icon-material-outline-star-border"></i> Bookmarks</a></li>
 							<li><a href="dashboard-reviews.html"><i class="icon-material-outline-rate-review"></i> Reviews</a></li>
-						</ul>
+						</ul> --}}
 
 						<ul data-submenu-title="Organize and Manage">
-							<li><a href="#"><i class="icon-material-outline-business-center"></i> Jobs</a>
+                            @if (Auth::user()->type == 'client')
+
+							<li><a href="#"><i class="icon-material-outline-business-center icon-material-outline-settings"></i> Jobs</a>
 								<ul>
-									<li><a href="dashboard-manage-jobs.html">Manage Jobs <span class="nav-tag">3</span></a></li>
-									<li><a href="dashboard-manage-candidates.html">Manage Candidates</a></li>
-									<li><a href="dashboard-post-a-job.html">Post a Job</a></li>
+									<li><a href="{{route('client.projects.index')}}">Manage Jobs <span class="nav-tag">{{Auth::user()->projects()->count()}}</span></a></li>
+									{{-- <li><a href="dashboard-manage-candidates.html">Manage Candidates</a></li> --}}
+									<li><a href="{{route('client.projects.create')}}">Post a Job</a></li>
 								</ul>
 							</li>
-							<li><a href="#"><i class="icon-material-outline-assignment"></i> Tasks</a>
+                            @else
+
+							<li><a href="#"><i class="icon-material-outline-assignment"></i> Proposals</a>
 								<ul>
-									<li><a href="dashboard-manage-tasks.html">Manage Tasks <span class="nav-tag">2</span></a></li>
-									<li><a href="dashboard-manage-bidders.html">Manage Bidders</a></li>
+									<li><a href="{{route('freelancer.proposals.index')}}">My Proposals <span class="nav-tag">{{Auth::user()->proposals()->count()}}</span></a></li>
+									{{-- <li><a href="dashboard-manage-bidders.html">Manage Bidders</a></li>
 									<li><a href="dashboard-my-active-bids.html">My Active Bids <span class="nav-tag">4</span></a></li>
-									<li><a href="dashboard-post-a-task.html">Post a Task</a></li>
+									<li><a href="dashboard-post-a-task.html">Post a Task</a></li> --}}
 								</ul>
 							</li>
+                            @endif
+                            <li><a href="{{route('freelancer.password.show')}}">Change Password</a></li>
 						</ul>
 
 						<ul data-submenu-title="Account">
-							<li class="active"><a href="dashboard-settings.html"><i class="icon-material-outline-settings"></i> Settings</a></li>
-							<li><a href="index-logged-out.html"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
+							{{-- <li class="active"><a href="dashboard-settings.html"><i class="icon-material-outline-settings"></i> Settings</a></li> --}}
+							{{-- <li><a href="index-logged-out.html"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li> --}}
+                            <li>
+                            <form action="{{route('logout')}}" method="POST">
+                                @csrf
+                                <li><button type="submit"><i class="icon-material-outline-power-settings-new"></i> Logout</button></li>
+                            </form>
+                            </li>
 						</ul>
 
 					</div>
@@ -428,14 +316,14 @@
 
 			<!-- Dashboard Headline -->
 			<div class="dashboard-headline">
-				<h3>Settings</h3>
+				<h3>{{$data}}</h3>
 
 				<!-- Breadcrumbs -->
 				<nav id="breadcrumbs" class="dark">
 					<ul>
 						<li><a href="#">Home</a></li>
 						<li><a href="#">Dashboard</a></li>
-						<li>Settings</li>
+						<li>{{$data}}</li>
 					</ul>
 				</nav>
 			</div>
@@ -500,6 +388,10 @@
 <script src="{{asset('assets/front/js/magnific-popup.min.js')}}"></script>
 <script src="{{asset('assets/front/js/slick.min.js')}}"></script>
 <script src="{{asset('assets/front/js/custom.js')}}"></script>
+<script>
+    const userId={{Auth::id()}}
+</script>
+<script src="{{asset('js/app.js')}}"></script>
 
 <!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
 <script>

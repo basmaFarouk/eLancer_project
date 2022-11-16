@@ -31,4 +31,22 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'vonage'=>[
+        'sms_from'=>'15556666666',
+        'key'=>env('VONAGE_KEY'),  //neeeww
+        'secret'=>env('VONAGE_SECRET')
+    ],
+
+    'nepras'=>[   //neeeewwww
+        'user'=>env('NEPRAS_USER'),
+        'pass'=>env('NEPRAS_PASS'),
+        'sender'=>env('NEPRAS_SENDER')
+    ],
+
+    'thawani'=>[
+        'secret_key'=>env('THAWANI_SECRET_kEY'),
+        'publishable_key'=>env('THAWANI_PUBLISHABLE_kEY'),
+        'mode'=>'test',
+    ]
+
 ];

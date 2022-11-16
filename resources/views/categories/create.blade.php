@@ -21,7 +21,7 @@
 
     @endif
 
-<form method="post" action="{{route('categories.store')}}">
+<form method="post" action="{{route('categories.store')}}" enctype="multipart/form-data">
     <input type="hidden" name="_token" value="<?= csrf_token()?>">
     <?php echo csrf_field()?>
 

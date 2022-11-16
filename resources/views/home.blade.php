@@ -3,12 +3,13 @@
 
       <!-- Intro Banner
 ================================================== -->
-<div class="intro-banner dark-overlay" data-background-image="images/home-background-02.jpg">
+<div class="intro-banner dark-overlay" data-background-image="{{asset('category/freelancer2.png')}}">
 
 	<!-- Transparent Header Spacer -->
 	<div class="transparent-header-spacer"></div>
 
 	<div class="container">
+
 
 		<!-- Intro Headline -->
 		<div class="row">
@@ -24,7 +25,7 @@
 		</div>
 
 		<!-- Search Bar -->
-		<div class="row">
+		{{-- <div class="row">
 			<div class="col-md-12">
 				<div class="intro-banner-search-form margin-top-95">
 
@@ -65,22 +66,22 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 
 		<!-- Stats -->
 		<div class="row">
 			<div class="col-md-12">
 				<ul class="intro-stats margin-top-45 hide-under-992px">
 					<li>
-						<strong class="counter">1,586</strong>
+						<strong class="counter">{{$projects_count}}</strong>
 						<span>Jobs Posted</span>
 					</li>
 					<li>
-						<strong class="counter">3,543</strong>
-						<span>Tasks Posted</span>
+						<strong class="counter">{{$clients_count}}</strong>
+						<span>Clients</span>
 					</li>
 					<li>
-						<strong class="counter">1,232</strong>
+						<strong class="counter">{{$freelancers_count}}</strong>
 						<span>Freelancers</span>
 					</li>
 				</ul>
@@ -106,17 +107,20 @@
 				</div>
 			</div>
 
+            @foreach ($categories as $category)
+
+
 			<div class="col-xl-3 col-md-6">
 				<!-- Photo Box -->
-				<a href="jobs-list-layout-1.html" class="photo-box small" data-background-image="images/job-category-01.jpg">
+				<a href="{{route('jobs.show',[$category->id])}}" class="photo-box small" data-background-image="{{$category->image_photo}}">
 					<div class="photo-box-content">
-						<h3>Web / Software Dev</h3>
-						<span>612</span>
+						<h3>{{$category->name}}</h3>
+						<span>{{$category->projects()->count()}}</span>
 					</div>
 				</a>
 			</div>
-
-			<div class="col-xl-3 col-md-6">
+            @endforeach
+			{{-- <div class="col-xl-3 col-md-6">
 				<!-- Photo Box -->
 				<a href="jobs-list-layout-full-page-map.html" class="photo-box small" data-background-image="images/job-category-02.jpg">
 					<div class="photo-box-content">
@@ -184,7 +188,7 @@
 						<span>445</span>
 					</div>
 				</a>
-			</div>
+			</div> --}}
 
 		</div>
 	</div>
@@ -202,30 +206,33 @@
 				<!-- Section Headline -->
 				<div class="section-headline margin-top-0 margin-bottom-35">
 					<h3>Recent Tasks</h3>
-					<a href="tasks-list-layout-1.html" class="headline-link">Browse All Tasks</a>
+					<a href="{{route('jobs.index')}}" class="headline-link">Browse All Tasks</a>
 				</div>
 
 				<!-- Jobs Container -->
 				<div class="tasks-list-container compact-list margin-top-35">
 
+                    @foreach ($recent_project as $project )
+
 					<!-- Task -->
-					<a href="single-task-page.html" class="task-listing">
+					<a href="{{route('projects.show',$project->id)}}" class="task-listing">
 
 						<!-- Job Listing Details -->
 						<div class="task-listing-details">
 
 							<!-- Details -->
 							<div class="task-listing-description">
-								<h3 class="task-listing-title">Food Delviery Mobile App</h3>
+								<h3 class="task-listing-title">{{$project->title}}</h3>
 								<ul class="task-icons">
-									<li><i class="icon-material-outline-location-on"></i> San Francisco</li>
-									<li><i class="icon-material-outline-access-time"></i> 2 minutes ago</li>
+									<li><i class="icon-material-outline-location-on"></i> {{$project->category->name ?? ''}}</li>
+									<li><i class="icon-material-outline-access-time"></i> {{$project->created_at->diffForHumans()}}</li>
 								</ul>
 								<div class="task-tags margin-top-15">
-									<span>iOS</span>
-									<span>Android</span>
-									<span>mobile apps</span>
-									<span>design</span>
+                                    @foreach ($project->tags as $tag )
+
+									<span>{{$tag->name}}</span>
+                                    @endforeach
+
 								</div>
 							</div>
 
@@ -234,144 +241,21 @@
 						<div class="task-listing-bid">
 							<div class="task-listing-bid-inner">
 								<div class="task-offers">
-									<strong>$1,000 - $2,500</strong>
-									<span>Fixed Price</span>
+                                    {{-- @php
+                                        $frmt=new NumberFormatter(App::currentLocale(),NumberFormatter::CURRENCY)
+                                    @endphp --}}
+									{{-- <strong>{{App::make('currency')->formatCurrency($project->budget,config('app.currency'))}}</strong> --}}
+                                    {{-- <strong>{{Currency::formatCurrency($project->budget,config('app.currency'))}}</strong> --}}
+                                    <strong>{{currency($project->budget)}}</strong>
+									<span>{{$project->type}}</span>
 								</div>
-								<span class="button button-sliding-icon ripple-effect">Bid Now <i class="icon-material-outline-arrow-right-alt"></i></span>
+								<span class="button button-sliding-icon ripple-effect">Apply Now <i class="icon-material-outline-arrow-right-alt"></i></span>
 							</div>
 						</div>
 					</a>
+                    @endforeach
 
-					<!-- Task -->
-					<a href="single-task-page.html" class="task-listing">
 
-						<!-- Job Listing Details -->
-						<div class="task-listing-details">
-
-							<!-- Details -->
-							<div class="task-listing-description">
-								<h3 class="task-listing-title">2000 Words English to German</h3>
-								<ul class="task-icons">
-									<li><i class="icon-material-outline-location-off"></i> Online Job</li>
-									<li><i class="icon-material-outline-access-time"></i> 5 minutes ago</li>
-								</ul>
-								<div class="task-tags margin-top-15">
-									<span>copywriting</span>
-									<span>translating</span>
-									<span>editing</span>
-								</div>
-							</div>
-
-						</div>
-
-						<div class="task-listing-bid">
-							<div class="task-listing-bid-inner">
-								<div class="task-offers">
-									<strong>$75</strong>
-									<span>Fixed Price</span>
-								</div>
-								<span class="button button-sliding-icon ripple-effect">Bid Now <i class="icon-material-outline-arrow-right-alt"></i></span>
-							</div>
-						</div>
-					</a>
-
-					<!-- Task -->
-					<a href="single-task-page.html" class="task-listing">
-
-						<!-- Job Listing Details -->
-						<div class="task-listing-details">
-
-							<!-- Details -->
-							<div class="task-listing-description">
-								<h3 class="task-listing-title">Fix Python Selenium Code</h3>
-								<ul class="task-icons">
-									<li><i class="icon-material-outline-location-off"></i> Online Job</li>
-									<li><i class="icon-material-outline-access-time"></i> 30 minutes ago</li>
-								</ul>
-								<div class="task-tags margin-top-15">
-									<span>Python</span>
-									<span>Flask</span>
-									<span>API Development</span>
-								</div>
-							</div>
-
-						</div>
-
-						<div class="task-listing-bid">
-							<div class="task-listing-bid-inner">
-								<div class="task-offers">
-									<strong>$100 - $150</strong>
-									<span>Hourly Rate</span>
-								</div>
-								<span class="button button-sliding-icon ripple-effect">Bid Now <i class="icon-material-outline-arrow-right-alt"></i></span>
-							</div>
-						</div>
-					</a>
-
-					<!-- Task -->
-					<a href="single-task-page.html" class="task-listing">
-
-						<!-- Job Listing Details -->
-						<div class="task-listing-details">
-
-							<!-- Details -->
-							<div class="task-listing-description">
-								<h3 class="task-listing-title">WordPress Theme Installation</h3>
-								<ul class="task-icons">
-									<li><i class="icon-material-outline-location-off"></i> Online Job</li>
-									<li><i class="icon-material-outline-access-time"></i> 1 hour ago</li>
-								</ul>
-								<div class="task-tags margin-top-15">
-									<span>WordPress</span>
-									<span>Theme Installation</span>
-								</div>
-							</div>
-
-						</div>
-
-						<div class="task-listing-bid">
-							<div class="task-listing-bid-inner">
-								<div class="task-offers">
-									<strong>$100</strong>
-									<span>Fixed Price</span>
-								</div>
-								<span class="button button-sliding-icon ripple-effect">Bid Now <i class="icon-material-outline-arrow-right-alt"></i></span>
-							</div>
-						</div>
-					</a>
-
-					<!-- Task -->
-					<a href="single-task-page.html" class="task-listing">
-
-						<!-- Job Listing Details -->
-						<div class="task-listing-details">
-
-							<!-- Details -->
-							<div class="task-listing-description">
-								<h3 class="task-listing-title">PHP Core Website Fixes</h3>
-								<ul class="task-icons">
-									<li><i class="icon-material-outline-location-off"></i> Online Job</li>
-									<li><i class="icon-material-outline-access-time"></i> 1 hour ago</li>
-								</ul>
-								<div class="task-tags margin-top-15">
-									<span>PHP</span>
-									<span>MySQL Administration</span>
-									<span>API Development</span>
-								</div>
-							</div>
-
-						</div>
-
-						<div class="task-listing-bid">
-							<div class="task-listing-bid-inner">
-								<div class="task-offers">
-									<strong>$50 - $80</strong>
-									<span>Hourly Rate</span>
-								</div>
-								<span class="button button-sliding-icon ripple-effect">Bid Now <i class="icon-material-outline-arrow-right-alt"></i></span>
-							</div>
-						</div>
-					</a>
 
 
 				</div>
@@ -554,37 +438,44 @@
 					<div class="single-counter">
 						<i class="icon-line-awesome-suitcase"></i>
 						<div class="counter-inner">
-							<h3><span class="counter">1,586</span></h3>
+							<h3><span class="counter">{{$projects_count}}</span></h3>
 							<span class="counter-title">Jobs Posted</span>
 						</div>
 					</div>
 
 					<!-- Counter -->
-					<div class="single-counter">
+					{{-- <div class="single-counter">
 						<i class="icon-line-awesome-legal"></i>
 						<div class="counter-inner">
-							<h3><span class="counter">3,543</span></h3>
+							<h3><span class="counter">{{$projects_count}}</span></h3>
 							<span class="counter-title">Tasks Posted</span>
 						</div>
-					</div>
+					</div> --}}
 
 					<!-- Counter -->
 					<div class="single-counter">
 						<i class="icon-line-awesome-user"></i>
 						<div class="counter-inner">
-							<h3><span class="counter">2,413</span></h3>
-							<span class="counter-title">Active Members</span>
+							<h3><span class="counter">{{$freelancers_count}}</span></h3>
+							<span class="counter-title">Freelancers</span>
+						</div>
+					</div>
+                    <div class="single-counter">
+						<i class="icon-line-awesome-user"></i>
+						<div class="counter-inner">
+							<h3><span class="counter">{{$clients_count}}</span></h3>
+							<span class="counter-title">Clients</span>
 						</div>
 					</div>
 
 					<!-- Counter -->
-					<div class="single-counter">
+					{{-- <div class="single-counter">
 						<i class="icon-line-awesome-trophy"></i>
 						<div class="counter-inner">
 							<h3><span class="counter">99</span>%</h3>
 							<span class="counter-title">Satisfaction Rate</span>
 						</div>
-					</div>
+					</div> --}}
 
 				</div>
 			</div>
