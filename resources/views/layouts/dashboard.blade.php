@@ -203,7 +203,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                @php
-                  $modules=['users.index'=>'Users','categories.index'=>'Categories','roles.index'=>'Roles','config'=>'App Settings'];
+                  $modules=['users.index'=>'Users','categories.index'=>'Categories','categories.trash'=>'Trashed Categories','roles.index'=>'Roles','config'=>'App Settings'];
               @endphp
             @foreach ($modules as $key=>$value)
           <li class="nav-item menu-open" data-target="#collapseLayouts{{$key}}">

@@ -185,6 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
+        App\Modules\Reviews\Providers\ReviewsServiceProvider::class,
 
         /*
          * Application Service Providers...

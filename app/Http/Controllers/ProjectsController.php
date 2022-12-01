@@ -17,7 +17,7 @@ class ProjectsController extends Controller
     }
 
     public function show(Project $project){
-        // dd($project->tags->toArray());
+        // dd($project->id);
         $tags=[];
         // foreach($project->tags as $tag){
         //     $tags[]=$tag->pivot->tag_id;

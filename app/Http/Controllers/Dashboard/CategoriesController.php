@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\CreateCategoryJob;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Rules\FilterRule;
@@ -97,8 +98,9 @@ class CategoriesController extends Controller
              }
         }
         $request['slug']=Str::slug($request->name) ;
+        // dispatch(new CreateCategoryJob($request->all()));
         $category =Category::create($request->all());
-        // session()->flash('message','raw inserted');
+        session()->flash('message','Category Created');
        return redirect()->route('categories.index')->with('message','raw inserted');
 
     }

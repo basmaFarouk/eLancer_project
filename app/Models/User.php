@@ -176,7 +176,7 @@ class User extends Authenticatable implements MustVerifyEmail //when the person 
                     return true;
                 }
             }
-
+            //return false
             return true;
 
     }

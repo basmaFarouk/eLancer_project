@@ -43,7 +43,7 @@
 		<div class="col-xl-8 col-lg-8 content-right-offset">
 
 			<div class="single-page-section">
-				<h3 class="margin-bottom-25">Job Description</h3>
+				<h3 class="margin-bottom-25">{{__('Job Description')}}</h3>
 				<p>{{$project->description}}</p>
 			</div>
 
@@ -56,26 +56,26 @@
 			</div> --}}
 
 			<div class="single-page-section">
-				<h3 class="margin-bottom-25">Similar Jobs</h3>
+				<h3 class="margin-bottom-25">{{__('Similar Jobs')}}</h3>
 
 				<!-- Listings Container -->
 				 <div class="listings-container grid-layout">
-                    @foreach ($similar_projects as $project)
+                    @foreach ($similar_projects as $sim_project)
 
 
 						<!-- Job Listing -->
-						<a href="{{route('projects.show',$project->id)}}" class="job-listing">
+						<a href="{{route('projects.show',$sim_project->id)}}" class="job-listing">
 
 							<!-- Job Listing Details -->
 							<div class="job-listing-details">
 								<!-- Logo -->
 								<div class="job-listing-company-logo">
-									<img src="{{$project->project_photo_url}}" alt="">
+									<img src="{{$sim_project->project_photo_url}}" alt="">
 								</div>
 
 								<!-- Details -->
 								<div class="job-listing-description">
-									<h4 class="job-listing-company">{{$project->title}}</h4>
+									<h4 class="job-listing-company">{{$sim_project->title}}</h4>
 									<h3 class="job-listing-title">Barista and Cashier</h3>
 								</div>
 							</div>
@@ -84,9 +84,9 @@
 							<div class="job-listing-footer">
 								<ul>
 									{{-- <li><i class="icon-material-outline-location-on"></i> San Francisco</li> --}}
-									<li><i class="icon-material-outline-business-center"></i> {{$project->type}}</li>
-									<li><i class="icon-material-outline-account-balance-wallet"></i> {{$project->budget}}</li>
-									<li><i class="icon-material-outline-access-time"></i> {{$project->created_at->diffForHumans()}}</li>
+									<li><i class="icon-material-outline-business-center"></i> {{$sim_project->type}}</li>
+									<li><i class="icon-material-outline-account-balance-wallet"></i> {{$sim_project->budget}}</li>
+									<li><i class="icon-material-outline-access-time"></i> {{$sim_project->created_at->diffForHumans()}}</li>
 								</ul>
 							</div>
 						</a>
@@ -222,6 +222,7 @@
 
 				<!-- Form -->
 				<form method="post" action="{{route('freelancer.proposals.store',$project->id)}}" id="apply-now-form">
+                    {{-- @dd($project->id) --}}
                     @csrf
 					<div class="input-with-icon-left">
 						<i class="icon-material-outline-account-circle"></i>

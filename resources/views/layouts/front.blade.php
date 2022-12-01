@@ -135,7 +135,7 @@
 							</ul>
 						</li> --}}
 
-                        {{-- <li>
+                        <li>
                             <a href="#" class="current">{{__('Langauge')}}</a>
                             <ul class="dropdown-nav">
                                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -146,7 +146,7 @@
                                 </li>
                                 @endforeach
                             </ul>
-                        </li> --}}
+                        </li>
 					</ul>
 				</nav>
 				<div class="clearfix"></div>

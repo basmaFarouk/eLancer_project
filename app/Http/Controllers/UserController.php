@@ -29,7 +29,7 @@ class UserController extends Controller
         $roles=Role::paginate(5);
         $user=User::find($id);
         $user_roles=$user->roles()->pluck('id')->toArray();
-        return view('users.assignRole',['roles'=>$roles,'user'=>$user,'userRoles'=>$user_roles]);
+        return view('users.assignRole',['roles'=>$roles,'new_user'=>$user,'userRoles'=>$user_roles]);
     }
 
     /**
@@ -74,8 +74,10 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user=User::find($id)->first();
-        $user->roles()->sync($request->roles);
+        $user=User::find($id);
+        // dd($request->roles);
+        $roles=$user->roles()->sync($request->roles);
+        // dd($roles);
         return redirect()->route('users.index')->with('message','User Sucess Updated');
     }
 

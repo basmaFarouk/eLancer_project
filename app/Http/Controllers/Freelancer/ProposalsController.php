@@ -36,6 +36,7 @@ class ProposalsController extends Controller
      */
     public function create($project_id)
     {
+        // dd($project_id);
         $project = Project::findOrFail($project_id);
         // if($project->status !=='open'){
         //     return redirect()->back()->with('message',"You can not apply to this Project") ;
@@ -58,6 +59,7 @@ class ProposalsController extends Controller
      */
     public function store(Request $request,$project_id)
     {
+        // dd($project_id);
         //عشان امنعه لو حاول برده يعمل >> submit
         $project = Project::findOrFail($project_id);
         if($project->status !=='open'){

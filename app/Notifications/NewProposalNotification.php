@@ -52,7 +52,7 @@ class NewProposalNotification extends Notification
         // return $via;
 
         //return ['database','mail','broadcast','vonage'];
-        return ['database','mail','broadcast'];
+        return ['mail','broadcast','database'];
         // return [Log::class,Nepras::class];
     }
 

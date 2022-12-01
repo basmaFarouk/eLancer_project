@@ -80,7 +80,7 @@ Route::get('jobs/{id}',[JobListController::class,'show'])->name('jobs.show')->mi
 Route::get('/users',[UserController::class,'index'])->name('users.index');
 Route::delete('/users/{user}',[UserController::class,'destroy'])->name('users.destroy');
 Route::get('/user/assignrole/{id}',[UserController::class,'create'])->name('users.assignrole');
-Route::put('/user/{id}/assignrole',[UserController::class,'update'])->name('users.update');
+Route::put('/user/assignrole/{id}',[UserController::class,'update'])->name('users.update');
 
 // Route::get('markread',function(){
 //     $user=Auth::user();

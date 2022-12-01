@@ -47,6 +47,7 @@ class ProjectsController extends Controller
         $projects = Project::with('category')->where('user_id',$user->id)->paginate();
         // $projects = $user->projects()->with('category.parent','tags')->dd();
           $projects = $user->projects()
+          ->latest()
          // ->closed()
           //->hourly()
          ->withoutGlobalScope('active')
@@ -207,11 +208,14 @@ class ProjectsController extends Controller
         $user=Auth::user();
         $project=$user->projects()->findOrFail($id);
         // $project->delete();
-        foreach($project->attachments as $file){
-                // dd($file);
-            //unlink(storage_path('app/public'.$file));
-            // unlink(public_path('uploads/attachments/'.basename($file)));
-            Storage::disk('uploads')->delete($file);
+        if($project->attachments){
+
+            foreach($project->attachments as $file){
+                    // dd($file);
+                //unlink(storage_path('app/public'.$file));
+                // unlink(public_path('uploads/attachments/'.basename($file)));
+                Storage::disk('uploads')->delete($file);
+            }
         }
         $project->delete();
         return redirect()->route('client.projects.index')->with(['message'=>'Project Deleted']);

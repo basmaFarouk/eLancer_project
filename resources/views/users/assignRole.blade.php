@@ -19,7 +19,7 @@
        <x-flash-message />
     </h1>
 
-        <form action="{{route('users.update',$user->id)}}" method="POST">
+        <form action="{{route('users.update',$new_user->id)}}" method="POST">
             @csrf
             @method('PUT')
     <div class="form-group">

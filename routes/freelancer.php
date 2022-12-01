@@ -13,7 +13,7 @@ Route::group([
     ->name('proposals.index');
     Route::get('proposals/{project_id}/create',[ProposalsController::class,'create'])
     ->name('proposals.create');
-    Route::post('proposals/{project_id}/create',[ProposalsController::class,'store'])
+    Route::post('proposals/{project_id}/store',[ProposalsController::class,'store'])
     ->name('proposals.store');
     Route::delete('proposal/{id}',[ProposalsController::class,'destroy'])->name('proposal.delete');
 

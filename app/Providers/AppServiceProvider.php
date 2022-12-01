@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
             return new NumberFormatter(App::currentLocale(),NumberFormatter::CURRENCY);
         });
         $frmt=new NumberFormatter(App::currentLocale(),NumberFormatter::CURRENCY);
-        $this->app->instance('curreny',$frmt); //بديها الاسم والاوبجيكت
+        $this->app->instance('currency',$frmt); //بديها الاسم والاوبجيكت
     }
 
     /**
