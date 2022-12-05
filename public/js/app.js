@@ -5083,8 +5083,9 @@ window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].start();
 window.Echo["private"]("App.Models.User.".concat(userId)).notification(function (data) {
   // alert(data.body)
-  $('#notificationsList').prepend("  <li class=\"notifications-not-read\">\n                <a href=\"".concat(data.url, "?notify_id=").concat(data.id, "\">\n                    <span class=\"notification-icon\"><i class=\"icon-material-outline-group\"></i></span>\n                    <span class=\"notification-text\">\n\n                            <strong>*</strong>\n                        ").concat(data.body, "\n                    </span>\n                </a>\n            </li>"));
-  var count = Number($('#newNotifications').text());
+  $('#notificationsList').prepend("  <li class=\"notifications-not-read\">\n                <a href=\"".concat(data.url, "?notify_id=").concat(data.id, "\">\n                    <span class=\"notification-icon\"><i class=\"icon-material-outline-group\"></i></span>\n                    <span class=\"notification-text\">\n\n                            <strong style=\"color: red\">*</strong>\n                        ").concat(data.body, "\n                    </span>\n                </a>\n            </li>"));
+  var count = Number($('#newNotifications').text()); //عشان يجيبلي التيكست اللي جواها
+
   count++;
 
   if (count > 99) {

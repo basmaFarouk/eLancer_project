@@ -14,7 +14,7 @@ window.Echo.private(`App.Models.User.${userId}`)
                     <span class="notification-icon"><i class="icon-material-outline-group"></i></span>
                     <span class="notification-text">
 
-                            <strong>*</strong>
+                            <strong style="color: red">*</strong>
                         ${data.body}
                     </span>
                 </a>

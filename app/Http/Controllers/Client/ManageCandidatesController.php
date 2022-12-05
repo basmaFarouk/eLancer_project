@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Notifications\AcceptProposalNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -32,8 +33,8 @@ class ManageCandidatesController extends Controller
     public function details($user_id,$project_id)
     {
         $user=Auth::user();
-        $projects=$user->projects()->findOrFail($project_id);
-        $freelancer=$projects->proposedFreelnacers()->find($user_id);
+        $project=$user->projects()->findOrFail($project_id);
+        $freelancer=$project->proposedFreelnacers()->find($user_id);
         if(!$freelancer){
             return redirect()->route('client.projects.index')->with('message','Propoasl has been Deleted');
         }
@@ -45,6 +46,7 @@ class ManageCandidatesController extends Controller
        $project= $user->projects()->find($project_id);
       $proposal=$project->proposals()->where('id',$proposal_id)->where('freelancer_id',$freelancer_id)->update(['status'=>'accepted']);
        $freelancer=User::find($freelancer_id);
+       $freelancer->notify(new AcceptProposalNotification($user,$project));
        return redirect()->route('client.candidate.details',[$freelancer_id,$project_id]);
 
     }

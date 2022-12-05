@@ -97,7 +97,7 @@
 
                                 <div class="uploadButton margin-top-30 ">
                                     <input class="uploadButton-input pe-5" name="project_photo" type="file" accept="image/*, application/pdf"
-                                        id="upload2" multiple />
+                                        id="upload2"  />
                                     <label class="uploadButton-button ripple-effect" for="upload2">Upload
                                         Project Photo</label>
 
